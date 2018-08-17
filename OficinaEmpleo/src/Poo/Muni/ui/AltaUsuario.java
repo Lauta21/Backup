@@ -5,6 +5,8 @@
  */
 package poo.muni.ui;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Capacitacion5
@@ -433,7 +435,7 @@ public class AltaUsuario extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void GuardaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GuardaActionPerformed
-        // TODO add your handling code here:
+        
         String contaseña = TextoContraseña.getText();
         String confirmarcontraseña = TextoConfirmarContraseña.getText();
         String nombre = TextoNombre.getText();
@@ -441,25 +443,22 @@ public class AltaUsuario extends javax.swing.JFrame {
         String email = TextoEmail.getText();
         String nombreUsusario = TextoNombreUsuario.getText();
         
-        
-        
         if(contaseña.isEmpty() || confirmarcontraseña.isEmpty() || nombre.isEmpty() || apellido.isEmpty() || email.isEmpty() || nombreUsusario.isEmpty()){
-            System.out.println("Error no deje ningun campo vacio");
+            JOptionPane.showMessageDialog(null,"Error no deje ningun campo vacio","Error", JOptionPane.ERROR_MESSAGE);
             return;
         }
             
          if(contaseña.equals(confirmarcontraseña)){
              System.out.println("Correcto");
          }else{
-                 System.out.println("Error las contraseñas no coinciden");    
+                 JOptionPane.showMessageDialog(null,"Error las contraseñas no coinciden","Error", JOptionPane.ERROR_MESSAGE);    
                  }       
          
     }//GEN-LAST:event_GuardaActionPerformed
 
     private void CancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CancelarActionPerformed
-        // TODO add your handling code here:
     }//GEN-LAST:event_CancelarActionPerformed
-
+        
     private void TextoNombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TextoNombreActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_TextoNombreActionPerformed
