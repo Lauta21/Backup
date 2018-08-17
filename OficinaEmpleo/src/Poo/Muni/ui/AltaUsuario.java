@@ -447,15 +447,15 @@ public class AltaUsuario extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null,"Error no deje ningun campo vacio","Error", JOptionPane.ERROR_MESSAGE);
             return;
         }
-         if(TextoContraseña.getText().length() <5 || TextoConfirmarContraseña.getText().length() < 5){
+        if(TextoContraseña.getText().length() <5 || TextoConfirmarContraseña.getText().length() < 5){
              JOptionPane.showMessageDialog(null,"Error la contraseña debe de tener mas de 5 caracteres","Error",JOptionPane.ERROR_MESSAGE);
-         }
+             }
             
          if(contaseña.equals(confirmarcontraseña)){
-          JOptionPane.showMessageDialog(null,"Error las contraseñas no coinciden","Error", JOptionPane.ERROR_MESSAGE);    
-        
-         } 
-         
+             JOptionPane.showMessageDialog(null,"Registro correcto","Informacion",JOptionPane.INFORMATION_MESSAGE);
+         }else{
+            JOptionPane.showMessageDialog(null,"Error las contraseñas no coinciden","Error", JOptionPane.ERROR_MESSAGE);    
+              }   
         
          
     }//GEN-LAST:event_GuardaActionPerformed
