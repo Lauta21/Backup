@@ -441,15 +441,17 @@ public class AltaUsuario extends javax.swing.JFrame {
         String email = TextoEmail.getText();
         String nombreUsusario = TextoNombreUsuario.getText();
         
-        if(contaseña.isEmpty() || confirmarcontraseña.isEmpty()){
-            System.out.println("Error no deje ningun campo de contraseña vacio");
+        
+        
+        if(contaseña.isEmpty() || confirmarcontraseña.isEmpty() || nombre.isEmpty() || apellido.isEmpty() || email.isEmpty() || nombreUsusario.isEmpty()){
+            System.out.println("Error no deje ningun campo vacio");
             return;
         }
             
          if(contaseña.equals(confirmarcontraseña)){
              System.out.println("Correcto");
          }else{
-                 System.out.println("Error las contraseñas no coiciden");    
+                 System.out.println("Error las contraseñas no coinciden");    
                  }       
          
     }//GEN-LAST:event_GuardaActionPerformed
