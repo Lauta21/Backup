@@ -9,7 +9,7 @@ package poo.muni;
  *
  * @author Capacitacion5
  */
-public class Clase {
+public class AltaUsuario {
     
     private String Nombre;
     private String Apellido;
@@ -18,10 +18,10 @@ public class Clase {
     private String CofirmarContraseña;
     private String Email;
 
-    public Clase() {
+    public AltaUsuario() {
     }
 
-    public Clase(String Nombre, String Apellido, String NombreUsuario, String Contraseña, String CofirmarContraseña, String Email) {
+    public AltaUsuario(String Nombre, String Apellido, String NombreUsuario, String Contraseña, String CofirmarContraseña, String Email) {
         this.Nombre = Nombre;
         this.Apellido = Apellido;
         this.NombreUsuario = NombreUsuario;

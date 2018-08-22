@@ -51,19 +51,19 @@ public class AltaUsuario extends javax.swing.JFrame {
         ConfirmarContraseña = new javax.swing.JLabel();
         jPanel6 = new javax.swing.JPanel();
         Apellido = new javax.swing.JLabel();
-        TextoApellido = new javax.swing.JTextField();
+        txtApellido = new javax.swing.JTextField();
         jPanel5 = new javax.swing.JPanel();
         Nombre = new javax.swing.JLabel();
-        TextoNombre = new javax.swing.JTextField();
+        txtNombre = new javax.swing.JTextField();
         jScrollPane3 = new javax.swing.JScrollPane();
-        TextoNombreUsuario = new javax.swing.JTextPane();
-        TextoContraseña = new javax.swing.JPasswordField();
-        TextoConfirmarContraseña = new javax.swing.JPasswordField();
+        txtNombreUsuario = new javax.swing.JTextPane();
+        txtContraseña = new javax.swing.JPasswordField();
+        txtConfirmarContraseña = new javax.swing.JPasswordField();
         Guarda = new javax.swing.JButton();
         Cancelar = new javax.swing.JButton();
         jPanel11 = new javax.swing.JPanel();
         Email = new javax.swing.JLabel();
-        TextoEmail = new javax.swing.JTextField();
+        txtEmail = new javax.swing.JTextField();
         jLabel9 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
@@ -263,13 +263,13 @@ public class AltaUsuario extends javax.swing.JFrame {
             .addComponent(Nombre, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
         );
 
-        TextoNombre.addActionListener(new java.awt.event.ActionListener() {
+        txtNombre.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                TextoNombreActionPerformed(evt);
+                txtNombreActionPerformed(evt);
             }
         });
 
-        jScrollPane3.setViewportView(TextoNombreUsuario);
+        jScrollPane3.setViewportView(txtNombreUsuario);
 
         Guarda.setBackground(new java.awt.Color(250, 250, 250));
         Guarda.setFont(new java.awt.Font("Microsoft JhengHei Light", 0, 18)); // NOI18N
@@ -328,12 +328,12 @@ public class AltaUsuario extends javax.swing.JFrame {
                             .addComponent(jPanel11, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addGap(33, 33, 33)
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(TextoContraseña)
-                            .addComponent(TextoConfirmarContraseña)
-                            .addComponent(TextoNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(TextoApellido)
+                            .addComponent(txtContraseña)
+                            .addComponent(txtConfirmarContraseña)
+                            .addComponent(txtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtApellido)
                             .addComponent(jScrollPane3)
-                            .addComponent(TextoEmail)))
+                            .addComponent(txtEmail)))
                     .addComponent(Cancelar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(113, Short.MAX_VALUE))
         );
@@ -343,28 +343,28 @@ public class AltaUsuario extends javax.swing.JFrame {
                 .addGap(30, 30, 30)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(TextoNombre))
+                    .addComponent(txtNombre))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(TextoApellido)
+                    .addComponent(txtApellido)
                     .addComponent(jPanel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jPanel11, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(TextoEmail))
+                    .addComponent(txtEmail))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(TextoContraseña, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(txtContraseña, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(jPanel8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(TextoConfirmarContraseña, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtConfirmarContraseña, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(Jlabel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(Guarda, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -436,22 +436,25 @@ public class AltaUsuario extends javax.swing.JFrame {
 
     private void GuardaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GuardaActionPerformed
         
-        String contaseña = TextoContraseña.getText();
-        String confirmarcontraseña = TextoConfirmarContraseña.getText();
-        String nombre = TextoNombre.getText();
-        String apellido = TextoApellido.getText();
-        String email = TextoEmail.getText();
-        String nombreUsusario = TextoNombreUsuario.getText();
+        char[] contaseña = txtContraseña.getPassword();
+        char[] confirmarcontraseña = txtConfirmarContraseña.getPassword();
+        String nombre = txtNombre.getText();
+        String apellido = txtApellido.getText();
+        String email = txtEmail.getText();
+        String nombreUsusario = txtNombreUsuario.getText();
         
-        if(contaseña.isEmpty() || confirmarcontraseña.isEmpty() || nombre.isEmpty() || apellido.isEmpty() || email.isEmpty() || nombreUsusario.isEmpty()){
+       
+        
+        if(contaseña.length<1 || confirmarcontraseña.length<1 || nombre.isEmpty() || apellido.isEmpty() || email.isEmpty() || nombreUsusario.isEmpty()){
             JOptionPane.showMessageDialog(null,"Error no deje ningun campo vacio","Error", JOptionPane.ERROR_MESSAGE);
             return;
         }
-        if(TextoContraseña.getText().length() <5 || TextoConfirmarContraseña.getText().length() < 5){
+        if(contaseña.length<5){
              JOptionPane.showMessageDialog(null,"Error la contraseña debe de tener mas de 5 caracteres","Error",JOptionPane.ERROR_MESSAGE);
+             return;
              }
             
-         if(contaseña.equals(confirmarcontraseña)){
+         if(String.valueOf(contaseña).equals(String.valueOf(confirmarcontraseña))){
              JOptionPane.showMessageDialog(null,"Registro correcto","Informacion",JOptionPane.INFORMATION_MESSAGE);
          }else{
             JOptionPane.showMessageDialog(null,"Error las contraseñas no coinciden","Error", JOptionPane.ERROR_MESSAGE);    
@@ -459,13 +462,21 @@ public class AltaUsuario extends javax.swing.JFrame {
         
          
     }//GEN-LAST:event_GuardaActionPerformed
+       
+    private void txtNombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNombreActionPerformed
+      
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtNombreActionPerformed
 
     private void CancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CancelarActionPerformed
-    }//GEN-LAST:event_CancelarActionPerformed
-        
-    private void TextoNombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TextoNombreActionPerformed
+      txtNombre.setText("");
+      txtApellido.setText("");
+      txtContraseña.setText("");
+      txtConfirmarContraseña.setText("");
+      txtEmail.setText("");
+      txtNombreUsuario.setText("");
         // TODO add your handling code here:
-    }//GEN-LAST:event_TextoNombreActionPerformed
+    }//GEN-LAST:event_CancelarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -512,12 +523,6 @@ public class AltaUsuario extends javax.swing.JFrame {
     private javax.swing.JPanel Jlabel5;
     private javax.swing.JLabel Nombre;
     private javax.swing.JLabel NombreUsuario;
-    private javax.swing.JTextField TextoApellido;
-    private javax.swing.JPasswordField TextoConfirmarContraseña;
-    private javax.swing.JPasswordField TextoContraseña;
-    private javax.swing.JTextField TextoEmail;
-    private javax.swing.JTextField TextoNombre;
-    private javax.swing.JTextPane TextoNombreUsuario;
     private javax.swing.JColorChooser jColorChooser1;
     private javax.swing.JDialog jDialog1;
     private javax.swing.JDialog jDialog2;
@@ -541,5 +546,11 @@ public class AltaUsuario extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JTextArea jTextArea1;
     private javax.swing.JTextPane jTextPane1;
+    private javax.swing.JTextField txtApellido;
+    private javax.swing.JPasswordField txtConfirmarContraseña;
+    private javax.swing.JPasswordField txtContraseña;
+    private javax.swing.JTextField txtEmail;
+    private javax.swing.JTextField txtNombre;
+    private javax.swing.JTextPane txtNombreUsuario;
     // End of variables declaration//GEN-END:variables
 }

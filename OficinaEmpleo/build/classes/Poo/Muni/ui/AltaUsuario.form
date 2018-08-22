@@ -250,12 +250,12 @@
                               </Group>
                               <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="TextoContraseña" max="32767" attributes="0"/>
-                                  <Component id="TextoConfirmarContraseña" max="32767" attributes="0"/>
-                                  <Component id="TextoNombre" min="-2" pref="165" max="-2" attributes="0"/>
-                                  <Component id="TextoApellido" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="txtContraseña" max="32767" attributes="0"/>
+                                  <Component id="txtConfirmarContraseña" max="32767" attributes="0"/>
+                                  <Component id="txtNombre" min="-2" pref="165" max="-2" attributes="0"/>
+                                  <Component id="txtApellido" alignment="0" max="32767" attributes="0"/>
                                   <Component id="jScrollPane3" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="TextoEmail" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="txtEmail" alignment="0" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                           <Component id="Cancelar" alignment="0" max="32767" attributes="0"/>
@@ -270,24 +270,24 @@
                       <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
                           <Component id="jPanel5" max="32767" attributes="0"/>
-                          <Component id="TextoNombre" max="32767" attributes="0"/>
+                          <Component id="txtNombre" max="32767" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="TextoApellido" max="32767" attributes="0"/>
+                          <Component id="txtApellido" max="32767" attributes="0"/>
                           <Component id="jPanel6" max="32767" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
                           <Component id="jPanel11" max="32767" attributes="0"/>
-                          <Component id="TextoEmail" max="32767" attributes="0"/>
+                          <Component id="txtEmail" max="32767" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
                               <Component id="jScrollPane3" min="-2" pref="47" max="-2" attributes="0"/>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Component id="TextoContraseña" min="-2" pref="42" max="-2" attributes="0"/>
+                              <Component id="txtContraseña" min="-2" pref="42" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
                               <Component id="jPanel7" min="-2" max="-2" attributes="0"/>
@@ -297,7 +297,7 @@
                       </Group>
                       <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="1" attributes="0">
-                          <Component id="TextoConfirmarContraseña" min="-2" pref="47" max="-2" attributes="0"/>
+                          <Component id="txtConfirmarContraseña" min="-2" pref="47" max="-2" attributes="0"/>
                           <Component id="Jlabel5" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="separate" min="-2" max="-2" attributes="0"/>
@@ -490,7 +490,7 @@
                 </Component>
               </SubComponents>
             </Container>
-            <Component class="javax.swing.JTextField" name="TextoApellido">
+            <Component class="javax.swing.JTextField" name="txtApellido">
             </Component>
             <Container class="javax.swing.JPanel" name="jPanel5">
               <Properties>
@@ -533,9 +533,9 @@
                 </Component>
               </SubComponents>
             </Container>
-            <Component class="javax.swing.JTextField" name="TextoNombre">
+            <Component class="javax.swing.JTextField" name="txtNombre">
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="TextoNombreActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtNombreActionPerformed"/>
               </Events>
             </Component>
             <Container class="javax.swing.JScrollPane" name="jScrollPane3">
@@ -545,13 +545,13 @@
 
               <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
               <SubComponents>
-                <Component class="javax.swing.JTextPane" name="TextoNombreUsuario">
+                <Component class="javax.swing.JTextPane" name="txtNombreUsuario">
                 </Component>
               </SubComponents>
             </Container>
-            <Component class="javax.swing.JPasswordField" name="TextoContrase&#xf1;a">
+            <Component class="javax.swing.JPasswordField" name="txtContrase&#xf1;a">
             </Component>
-            <Component class="javax.swing.JPasswordField" name="TextoConfirmarContrase&#xf1;a">
+            <Component class="javax.swing.JPasswordField" name="txtConfirmarContrase&#xf1;a">
             </Component>
             <Component class="javax.swing.JButton" name="Guarda">
               <Properties>
@@ -621,7 +621,7 @@
                 </Component>
               </SubComponents>
             </Container>
-            <Component class="javax.swing.JTextField" name="TextoEmail">
+            <Component class="javax.swing.JTextField" name="txtEmail">
             </Component>
           </SubComponents>
         </Container>
