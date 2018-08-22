@@ -1,1 +1,2 @@
 https://hjcode.wordpress.com/2012/09/25/tutorial-de-hibernate-4-introduccion/
+https://razaoinfo.dl.sourceforge.net/project/hibernate/hibernate-orm/5.3.5.Final/hibernate-release-5.3.5.Final.zip
