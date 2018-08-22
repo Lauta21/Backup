@@ -9,6 +9,6 @@ package Poo.Muni.Dao;
  *
  * @author Capacitacion3
  */
-public class NewClass {
+public class Usuariodao {
     
 }

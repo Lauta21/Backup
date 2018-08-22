@@ -11,7 +11,7 @@ import java.util.Date;
  *
  * @author Capacitacion3
  */
-public abstract class Personas {
+public abstract class Persona {
      private String nombre;
      private String apellido;
      private Integer DNI;
@@ -28,7 +28,7 @@ public abstract class Personas {
      public void Personas(){
          
      }
-    public Personas(String nombre, String apellido, Integer DNI, String cuil_Cuit, String sexo, String direccion, String distrito, int telPrincipal, int telAlternativo, Date fechadeNacimiento, String email, int edad) {
+    public Persona(String nombre, String apellido, Integer DNI, String cuil_Cuit, String sexo, String direccion, String distrito, int telPrincipal, int telAlternativo, Date fechadeNacimiento, String email, int edad) {
         this.nombre = nombre;
         this.apellido = apellido;
         this.DNI = DNI;

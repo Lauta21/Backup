@@ -11,7 +11,7 @@ import java.util.Date;
  *
  * @author Capacitacion3
  */
-public class Postulante extends Personas{
+public class Postulante extends Persona{
     private NivelEducacion nivelEducacion;
     private Perfil perfil;
     private Programa programa;

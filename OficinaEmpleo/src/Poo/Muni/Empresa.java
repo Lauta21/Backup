@@ -11,7 +11,7 @@ import java.util.Date;
  *
  * @author Capacitacion3
  */
-public class Empresa extends Personas{
+public class Empresa extends Persona{
     private TipoActividad tipoActividad;
     private String razonSocial;
     private String representanteLegal;
