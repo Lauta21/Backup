@@ -3,8 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Poo.muni;
-
+package Poo.Muni.Controler;
+ import Poo.Muni.Controler.gestorEmpleo;
+ 
 /**
  *
  * @author Capacitacion3
@@ -15,7 +16,10 @@ public class ProyectoMuni {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        try {
+            new gestorEmpleo().run();
+        } catch (Exception e) {
+        }
     }
-    
+     
 }
