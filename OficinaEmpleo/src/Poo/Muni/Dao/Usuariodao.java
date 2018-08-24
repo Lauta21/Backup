@@ -22,7 +22,7 @@ public class UsuarioDao {
         this.sessionFactory = sessionFactory;
     }
     
-    public void GuardarUsusario(Usuario usuario){
+    public void GuardarUsuario(Usuario usuario){
         Session session = sessionFactory.openSession();
         Transaction tx = null;
         
