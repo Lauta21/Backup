@@ -35,6 +35,8 @@ public class UsuarioDao {
             if(tx!=null) tx.rollback();
             e.printStackTrace();
         }
-        
+        finally{
+            session.close();
+        }
     }
 }
