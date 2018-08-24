@@ -6,27 +6,44 @@
 package Poo.Muni;
 
 import java.util.Date;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
 /**
  *
  * @author Capacitacion3
  */
+@Entity
+@Table(name = "Usuario")
 public class Usuario {
+    @Id
+    @GeneratedValue
+    @Column(name = "id_usuario")
+    private String id_usuario;
+    @Column(name = "nombreUsusario")
     private String nombreUsuario;
+    @Column(name = "contraseña")
     private String contraseña;
+    @Column(name = "nombre")
     private String nombre;
+    @Column(name = "apellido")
     private String apellido;
+    @Column(name = "fecha")
     private Date fecha;
 
     public Usuario() {
     }
 
-    public Usuario(String nombreUsuario, String contraseña, String nombre, String apellido, Date fecha) {
+    public Usuario(String nombreUsuario, String contraseña, String nombre, String apellido, Date fecha,String id_usuario) {
         this.nombreUsuario = nombreUsuario;
         this.contraseña = contraseña;
         this.nombre = nombre;
         this.apellido = apellido;
         this.fecha = fecha;
+        this.id_usuario = id_usuario;
     }
     
     public void IniciarSesion(){    
@@ -64,5 +81,11 @@ public class Usuario {
     }
     public void setFecha(Date fecha) {
         this.fecha = fecha;
-    }   
+    }
+    public String getId_usuario(){
+        return id_usuario;
+    }
+    public void setId_usuario(String id_usuario){
+        this.id_usuario = id_usuario;
+    }
 }
