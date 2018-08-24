@@ -5,15 +5,16 @@
  */
 package Poo.Muni.Controler;
 
+import org.hibernate.SessionFactory;
 import poo.muni.ui.AltaUsuario;
 
 /**
  *
  * @author Capacitacion3
  */
-public class gestorEmpleo {
+public class GestorOficinaEmpleo {
      
-    public gestorEmpleo(){
+    public GestorOficinaEmpleo(SessionFactory sessionFactory){
         
     }
     public void run(){
