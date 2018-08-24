@@ -5,6 +5,7 @@
  */
 package Poo.Muni.Controler;
 
+import Poo.Muni.Dao.UsuarioDao;
 import org.hibernate.SessionFactory;
 import poo.muni.ui.AltaUsuario;
 
@@ -14,10 +15,15 @@ import poo.muni.ui.AltaUsuario;
  */
 public class GestorOficinaEmpleo {
      
+    private UsuarioDao usuariodao;
     public GestorOficinaEmpleo(SessionFactory sessionFactory){
         
     }
     public void run(){
-        new AltaUsuario().setVisible(true);
+        new AltaUsuario(this).setVisible(true);
+    }
+    
+    public void GuardarUsuario(){
+        
     }
 }

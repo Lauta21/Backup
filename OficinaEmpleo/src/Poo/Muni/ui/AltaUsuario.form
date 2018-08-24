@@ -252,10 +252,13 @@
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Component id="txtContraseña" max="32767" attributes="0"/>
                                   <Component id="txtConfirmarContraseña" max="32767" attributes="0"/>
-                                  <Component id="txtNombre" min="-2" pref="165" max="-2" attributes="0"/>
                                   <Component id="txtApellido" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="jScrollPane3" alignment="0" max="32767" attributes="0"/>
                                   <Component id="txtEmail" alignment="0" max="32767" attributes="0"/>
+                                  <Group type="102" attributes="0">
+                                      <Component id="txtNombre" min="-2" pref="165" max="-2" attributes="0"/>
+                                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                                  </Group>
+                                  <Component id="txtnombreUsuario" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                           <Component id="Cancelar" alignment="0" max="32767" attributes="0"/>
@@ -285,7 +288,7 @@
                       <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
-                              <Component id="jScrollPane3" min="-2" pref="47" max="-2" attributes="0"/>
+                              <Component id="txtnombreUsuario" min="-2" pref="47" max="-2" attributes="0"/>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
                               <Component id="txtContraseña" min="-2" pref="42" max="-2" attributes="0"/>
                           </Group>
@@ -491,6 +494,9 @@
               </SubComponents>
             </Container>
             <Component class="javax.swing.JTextField" name="txtApellido">
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtApellidoActionPerformed"/>
+              </Events>
             </Component>
             <Container class="javax.swing.JPanel" name="jPanel5">
               <Properties>
@@ -538,17 +544,6 @@
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtNombreActionPerformed"/>
               </Events>
             </Component>
-            <Container class="javax.swing.JScrollPane" name="jScrollPane3">
-              <AuxValues>
-                <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
-              </AuxValues>
-
-              <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
-              <SubComponents>
-                <Component class="javax.swing.JTextPane" name="txtNombreUsuario">
-                </Component>
-              </SubComponents>
-            </Container>
             <Component class="javax.swing.JPasswordField" name="txtContrase&#xf1;a">
             </Component>
             <Component class="javax.swing.JPasswordField" name="txtConfirmarContrase&#xf1;a">
@@ -622,6 +617,8 @@
               </SubComponents>
             </Container>
             <Component class="javax.swing.JTextField" name="txtEmail">
+            </Component>
+            <Component class="javax.swing.JTextField" name="txtnombreUsuario">
             </Component>
           </SubComponents>
         </Container>

@@ -5,6 +5,7 @@
  */
 package poo.muni.ui;
 
+import Poo.Muni.Controler.GestorOficinaEmpleo;
 import javax.swing.JOptionPane;
 
 /**
@@ -13,11 +14,15 @@ import javax.swing.JOptionPane;
  */
 public class AltaUsuario extends javax.swing.JFrame {
 
+      GestorOficinaEmpleo gestor;    
     /**
      * Creates new form AltaUsuario
      */
-    public AltaUsuario() {
+    public AltaUsuario(GestorOficinaEmpleo gestor) {
+        
+        this.gestor = gestor;
         initComponents();
+       
     }
 
     /**
@@ -55,8 +60,6 @@ public class AltaUsuario extends javax.swing.JFrame {
         jPanel5 = new javax.swing.JPanel();
         Nombre = new javax.swing.JLabel();
         txtNombre = new javax.swing.JTextField();
-        jScrollPane3 = new javax.swing.JScrollPane();
-        txtNombreUsuario = new javax.swing.JTextPane();
         txtContraseña = new javax.swing.JPasswordField();
         txtConfirmarContraseña = new javax.swing.JPasswordField();
         Guarda = new javax.swing.JButton();
@@ -64,6 +67,7 @@ public class AltaUsuario extends javax.swing.JFrame {
         jPanel11 = new javax.swing.JPanel();
         Email = new javax.swing.JLabel();
         txtEmail = new javax.swing.JTextField();
+        txtnombreUsuario = new javax.swing.JTextField();
         jLabel9 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
@@ -241,6 +245,12 @@ public class AltaUsuario extends javax.swing.JFrame {
             .addComponent(Apellido, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 42, Short.MAX_VALUE)
         );
 
+        txtApellido.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtApellidoActionPerformed(evt);
+            }
+        });
+
         jPanel5.setBackground(new java.awt.Color(77, 77, 77));
 
         Nombre.setBackground(new java.awt.Color(200, 38, 82));
@@ -268,8 +278,6 @@ public class AltaUsuario extends javax.swing.JFrame {
                 txtNombreActionPerformed(evt);
             }
         });
-
-        jScrollPane3.setViewportView(txtNombreUsuario);
 
         Guarda.setBackground(new java.awt.Color(250, 250, 250));
         Guarda.setFont(new java.awt.Font("Microsoft JhengHei Light", 0, 18)); // NOI18N
@@ -330,10 +338,12 @@ public class AltaUsuario extends javax.swing.JFrame {
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(txtContraseña)
                             .addComponent(txtConfirmarContraseña)
-                            .addComponent(txtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(txtApellido)
-                            .addComponent(jScrollPane3)
-                            .addComponent(txtEmail)))
+                            .addComponent(txtEmail)
+                            .addGroup(jPanel3Layout.createSequentialGroup()
+                                .addComponent(txtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(0, 0, Short.MAX_VALUE))
+                            .addComponent(txtnombreUsuario)))
                     .addComponent(Cancelar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(113, Short.MAX_VALUE))
         );
@@ -355,7 +365,7 @@ public class AltaUsuario extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(txtnombreUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(txtContraseña, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel3Layout.createSequentialGroup()
@@ -446,7 +456,7 @@ public class AltaUsuario extends javax.swing.JFrame {
         String nombre = txtNombre.getText();
         String apellido = txtApellido.getText();
         String email = txtEmail.getText();
-        String nombreUsusario = txtNombreUsuario.getText();
+        String nombreUsusario = txtnombreUsuario.getText();
         
        
         
@@ -477,9 +487,13 @@ public class AltaUsuario extends javax.swing.JFrame {
       txtContraseña.setText("");
       txtConfirmarContraseña.setText("");
       txtEmail.setText("");
-      txtNombreUsuario.setText("");
+      txtnombreUsuario.setText("");
         // TODO add your handling code here:
     }//GEN-LAST:event_CancelarActionPerformed
+
+    private void txtApellidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtApellidoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtApellidoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -546,7 +560,6 @@ public class AltaUsuario extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel8;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JTextArea jTextArea1;
     private javax.swing.JTextPane jTextPane1;
     private javax.swing.JTextField txtApellido;
@@ -554,6 +567,6 @@ public class AltaUsuario extends javax.swing.JFrame {
     private javax.swing.JPasswordField txtContraseña;
     private javax.swing.JTextField txtEmail;
     private javax.swing.JTextField txtNombre;
-    private javax.swing.JTextPane txtNombreUsuario;
+    private javax.swing.JTextField txtnombreUsuario;
     // End of variables declaration//GEN-END:variables
 }
