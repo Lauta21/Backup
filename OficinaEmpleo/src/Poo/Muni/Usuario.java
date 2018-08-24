@@ -39,13 +39,12 @@ public class Usuario {
     public Usuario() {
     }
 
-    public Usuario(String nombreUsuario, String contraseña, String nombre, String apellido,String id_usuario,String mail) {
+    public Usuario(String nombreUsuario, String contraseña, String nombre, String apellido,String mail) {
         this.nombreUsuario = nombreUsuario;
         this.contraseña = contraseña;
         this.nombre = nombre;
         this.apellido = apellido;
         this.fechaActual = new Date();
-        this.id_usuario = id_usuario;
         this.mail = mail;
     }
     

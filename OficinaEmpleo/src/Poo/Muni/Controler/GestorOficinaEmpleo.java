@@ -25,7 +25,7 @@ public class GestorOficinaEmpleo {
     }
     
     public void GuardarUsuario(String nombre,String apellido,String contraseña,String nombreUsuario,String mail){
-        Usuario usuario = new Usuario(nombre, apellido,contraseña,nombreUsuario,mail,null);
+        Usuario usuario = new Usuario(nombre,apellido,contraseña,nombreUsuario,mail);
         
     }
 }
