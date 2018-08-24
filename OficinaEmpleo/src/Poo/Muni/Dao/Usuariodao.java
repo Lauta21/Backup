@@ -5,7 +5,11 @@
  */
 package Poo.Muni.Dao;
 
+import Poo.Muni.Usuario;
+import org.hibernate.HibernateException;
+import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
 
 /**
  *
@@ -16,5 +20,21 @@ public class UsuarioDao {
     
     public UsuarioDao(SessionFactory sessionFactory){
         this.sessionFactory = sessionFactory;
+    }
+    
+    public void GuardarUsusario(Usuario usuario){
+        Session session = sessionFactory.openSession();
+        Transaction tx = null;
+        
+        try {
+            tx = session.beginTransaction();
+            session.save(usuario);
+            tx.commit();
+            
+        } catch (HibernateException e) {
+            if(tx!=null) tx.rollback();
+            e.printStackTrace();
+        }
+        
     }
 }
