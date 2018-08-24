@@ -435,9 +435,14 @@ public class AltaUsuario extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void GuardaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GuardaActionPerformed
+       GuardarAltaUsuario();
         
-        char[] contaseña = txtContraseña.getPassword();
-        char[] confirmarcontraseña = txtConfirmarContraseña.getPassword();
+    }//GEN-LAST:event_GuardaActionPerformed
+      
+    public void GuardarAltaUsuario(){
+         
+        String contaseña = txtContraseña.getText();
+        String confirmarcontraseña = txtConfirmarContraseña.getText();
         String nombre = txtNombre.getText();
         String apellido = txtApellido.getText();
         String email = txtEmail.getText();
@@ -445,24 +450,22 @@ public class AltaUsuario extends javax.swing.JFrame {
         
        
         
-        if(contaseña.length<1 || confirmarcontraseña.length<1 || nombre.isEmpty() || apellido.isEmpty() || email.isEmpty() || nombreUsusario.isEmpty()){
-            JOptionPane.showMessageDialog(null,"Error no deje ningun campo vacio","Error", JOptionPane.ERROR_MESSAGE);
-            return;
-        }
-        if(contaseña.length<5){
-             JOptionPane.showMessageDialog(null,"Error la contraseña debe de tener mas de 5 caracteres","Error",JOptionPane.ERROR_MESSAGE);
-             return;
-             }
+    if(contaseña.isEmpty() || confirmarcontraseña.isEmpty() || nombre.isEmpty() || apellido.isEmpty() || email.isEmpty() || nombreUsusario.isEmpty()){
+        JOptionPane.showMessageDialog(null,"Error no deje ningun campo vacio","Error", JOptionPane.ERROR_MESSAGE);
+        return;
+    }
+    if(contaseña.length()<6){
+        JOptionPane.showMessageDialog(null,"Error la contraseña debe de tener mas de 5 caracteres","Error",JOptionPane.ERROR_MESSAGE);
+        return;
+    }
             
-         if(String.valueOf(contaseña).equals(String.valueOf(confirmarcontraseña))){
-             JOptionPane.showMessageDialog(null,"Registro correcto","Informacion",JOptionPane.INFORMATION_MESSAGE);
-         }else{
-            JOptionPane.showMessageDialog(null,"Error las contraseñas no coinciden","Error", JOptionPane.ERROR_MESSAGE);    
-              }   
-        
-         
-    }//GEN-LAST:event_GuardaActionPerformed
-       
+    if(String.valueOf(contaseña).equals(String.valueOf(confirmarcontraseña))){
+        JOptionPane.showMessageDialog(null,"Registro correcto","Informacion",JOptionPane.INFORMATION_MESSAGE);
+    }else{
+        JOptionPane.showMessageDialog(null,"Error las contraseñas no coinciden","Error", JOptionPane.ERROR_MESSAGE);    
+    }   
+    }
+
     private void txtNombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNombreActionPerformed
       
         // TODO add your handling code here:

@@ -27,7 +27,7 @@ public class ProyectoMuni {
              System.err.println("Failed to create sessionFactory object." + ex);
          throw new ExceptionInInitializerError(ex);
         }
-        GestorOficinaEmpleo(factory).run
+        new GestorOficinaEmpleo(factory).run();
     }
      
 }

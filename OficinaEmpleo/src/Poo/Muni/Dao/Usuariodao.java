@@ -5,10 +5,16 @@
  */
 package Poo.Muni.Dao;
 
+import org.hibernate.SessionFactory;
+
 /**
  *
  * @author Capacitacion3
  */
-public class Usuariodao {
+public class UsuarioDao {
+    private final SessionFactory sessionFactory;
     
+    public UsuarioDao(SessionFactory sessionFactory){
+        this.sessionFactory = sessionFactory;
+    }
 }
