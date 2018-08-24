@@ -32,18 +32,21 @@ public class Usuario {
     @Column(name = "apellido")
     private String apellido;
     @Column(name = "fecha")
-    private Date fecha;
+    private Date fechaActual;
+    @Column(name = "email")
+    private String mail;
 
     public Usuario() {
     }
 
-    public Usuario(String nombreUsuario, String contraseña, String nombre, String apellido, Date fecha,String id_usuario) {
+    public Usuario(String nombreUsuario, String contraseña, String nombre, String apellido,String id_usuario,String mail) {
         this.nombreUsuario = nombreUsuario;
         this.contraseña = contraseña;
         this.nombre = nombre;
         this.apellido = apellido;
-        this.fecha = fecha;
+        this.fechaActual = new Date();
         this.id_usuario = id_usuario;
+        this.mail = mail;
     }
     
     public void IniciarSesion(){    
@@ -77,10 +80,10 @@ public class Usuario {
         this.apellido = apellido;
     }
     public Date getFecha() {
-        return fecha;
+        return fechaActual;
     }
-    public void setFecha(Date fecha) {
-        this.fecha = fecha;
+    public void setFecha(Date fechaActual) {
+        this.fechaActual = fechaActual;
     }
     public String getId_usuario(){
         return id_usuario;
@@ -88,4 +91,11 @@ public class Usuario {
     public void setId_usuario(String id_usuario){
         this.id_usuario = id_usuario;
     }
+    public String getMail() {
+        return mail;
+    }
+    public void setMail(String mail) {
+        this.mail = mail;
+    }
+    
 }

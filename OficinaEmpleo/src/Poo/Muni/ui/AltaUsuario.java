@@ -14,7 +14,7 @@ import javax.swing.JOptionPane;
  */
 public class AltaUsuario extends javax.swing.JFrame {
 
-      GestorOficinaEmpleo gestor;    
+    private final  GestorOficinaEmpleo gestor;    
     /**
      * Creates new form AltaUsuario
      */
@@ -66,7 +66,7 @@ public class AltaUsuario extends javax.swing.JFrame {
         Cancelar = new javax.swing.JButton();
         jPanel11 = new javax.swing.JPanel();
         Email = new javax.swing.JLabel();
-        txtEmail = new javax.swing.JTextField();
+        txtMail = new javax.swing.JTextField();
         txtnombreUsuario = new javax.swing.JTextField();
         jLabel9 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
@@ -339,7 +339,7 @@ public class AltaUsuario extends javax.swing.JFrame {
                             .addComponent(txtContraseña)
                             .addComponent(txtConfirmarContraseña)
                             .addComponent(txtApellido)
-                            .addComponent(txtEmail)
+                            .addComponent(txtMail)
                             .addGroup(jPanel3Layout.createSequentialGroup()
                                 .addComponent(txtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(0, 0, Short.MAX_VALUE))
@@ -361,7 +361,7 @@ public class AltaUsuario extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jPanel11, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(txtEmail))
+                    .addComponent(txtMail))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel3Layout.createSequentialGroup()
@@ -451,29 +451,32 @@ public class AltaUsuario extends javax.swing.JFrame {
       
     public void GuardarAltaUsuario(){
          
-        String contaseña = txtContraseña.getText();
+        String contraseña = txtContraseña.getText();
         String confirmarcontraseña = txtConfirmarContraseña.getText();
         String nombre = txtNombre.getText();
         String apellido = txtApellido.getText();
-        String email = txtEmail.getText();
-        String nombreUsusario = txtnombreUsuario.getText();
+        String mail = txtMail.getText();
+        String nombreUsuario = txtnombreUsuario.getText();
         
        
         
-    if(contaseña.isEmpty() || confirmarcontraseña.isEmpty() || nombre.isEmpty() || apellido.isEmpty() || email.isEmpty() || nombreUsusario.isEmpty()){
+    if(contraseña.isEmpty() || confirmarcontraseña.isEmpty() || nombre.isEmpty() || apellido.isEmpty() || mail.isEmpty() || nombreUsuario.isEmpty()){
         JOptionPane.showMessageDialog(null,"Error no deje ningun campo vacio","Error", JOptionPane.ERROR_MESSAGE);
         return;
     }
-    if(contaseña.length()<6){
+    if(contraseña.length()<6){
         JOptionPane.showMessageDialog(null,"Error la contraseña debe de tener mas de 5 caracteres","Error",JOptionPane.ERROR_MESSAGE);
         return;
     }
             
-    if(String.valueOf(contaseña).equals(String.valueOf(confirmarcontraseña))){
+    if(String.valueOf(contraseña).equals(String.valueOf(confirmarcontraseña))){
         JOptionPane.showMessageDialog(null,"Registro correcto","Informacion",JOptionPane.INFORMATION_MESSAGE);
     }else{
         JOptionPane.showMessageDialog(null,"Error las contraseñas no coinciden","Error", JOptionPane.ERROR_MESSAGE);    
-    }   
+    }  
+    
+    gestor.GuardarUsuario(nombre,apellido,contraseña,nombreUsuario,mail);
+    
     }
 
     private void txtNombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNombreActionPerformed
@@ -486,7 +489,7 @@ public class AltaUsuario extends javax.swing.JFrame {
       txtApellido.setText("");
       txtContraseña.setText("");
       txtConfirmarContraseña.setText("");
-      txtEmail.setText("");
+      txtMail.setText("");
       txtnombreUsuario.setText("");
         // TODO add your handling code here:
     }//GEN-LAST:event_CancelarActionPerformed
@@ -498,37 +501,37 @@ public class AltaUsuario extends javax.swing.JFrame {
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(AltaUsuario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(AltaUsuario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(AltaUsuario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(AltaUsuario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new AltaUsuario().setVisible(true);
-            }
-        });
-    }
+//    public static void main(String args[]) {
+//        /* Set the Nimbus look and feel */
+//        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
+//        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
+//         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+//         */
+//        try {
+//            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+//                if ("Nimbus".equals(info.getName())) {
+//                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+//                    break;
+//                }
+//            }
+//        } catch (ClassNotFoundException ex) {
+//            java.util.logging.Logger.getLogger(AltaUsuario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+//        } catch (InstantiationException ex) {
+//            java.util.logging.Logger.getLogger(AltaUsuario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+//        } catch (IllegalAccessException ex) {
+//            java.util.logging.Logger.getLogger(AltaUsuario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+//        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+//            java.util.logging.Logger.getLogger(AltaUsuario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+//        }
+//        //</editor-fold>
+//
+//        /* Create and display the form */
+//        java.awt.EventQueue.invokeLater(new Runnable() {
+//            public void run() {
+//                new AltaUsuario().setVisible(true);
+//            }
+//        });
+//    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Apellido;
@@ -565,7 +568,7 @@ public class AltaUsuario extends javax.swing.JFrame {
     private javax.swing.JTextField txtApellido;
     private javax.swing.JPasswordField txtConfirmarContraseña;
     private javax.swing.JPasswordField txtContraseña;
-    private javax.swing.JTextField txtEmail;
+    private javax.swing.JTextField txtMail;
     private javax.swing.JTextField txtNombre;
     private javax.swing.JTextField txtnombreUsuario;
     // End of variables declaration//GEN-END:variables

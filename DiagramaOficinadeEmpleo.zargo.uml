@@ -66,7 +66,7 @@
 			CodeGeneration
 		</plugin>
 </profile>
-<XMI xmi.version = '1.2' xmlns:UML = 'org.omg.xmi.namespace.UML' timestamp = 'Mon Aug 13 09:45:09 ACT 2018'>
+<XMI xmi.version = '1.2' xmlns:UML = 'org.omg.xmi.namespace.UML' timestamp = 'Fri Aug 24 09:43:15 ACT 2018'>
   <XMI.header>    <XMI.documentation>
       <XMI.exporter>ArgoUML (using Netbeans XMI Writer version 1.0)</XMI.exporter>
       <XMI.exporterVersion>0.34(6) revised on $Date: 2010-01-11 22:20:14 +0100 (Mon, 11 Jan 2010) $ </XMI.exporterVersion>
@@ -1950,7 +1950,7 @@
       x="433"
       y="401"
       width="211"
-      height="22"
+      height="23"
       fill="0"
       fillcolor="white"
       stroke="0"
@@ -1987,7 +1987,7 @@
     </group>
     <rectangle name="Fig3.3"
       x="432"
-      y="423"
+      y="424"
       width="213"
       height="1"
       fill="1"
@@ -1996,7 +1996,7 @@
       strokecolor="black"
     />
     <group name="Fig3.4"
-         description="org.argouml.uml.diagram.ui.FigAttributesCompartment[433, 424, 211, 126]"
+         description="org.argouml.uml.diagram.ui.FigAttributesCompartment[433, 425, 211, 128]"
          href="-64--88-0--93-508f4824:16523c54d9d:-8000:00000000000009C3"
          fill="0"
          fillcolor="white"
@@ -2008,9 +2008,9 @@
       
       <rectangle name="Fig3.4.0"
         x="433"
-        y="424"
+        y="425"
         width="211"
-        height="126"
+        height="128"
         fill="0"
         fillcolor="white"
         stroke="0"
@@ -2018,9 +2018,9 @@
       />
       <text name="Fig3.4.1"
         x="433"
-        y="424"
+        y="425"
         width="211"
-        height="16"
+        height="17"
         fill="0"
         fillcolor="white"
         stroke="0"
@@ -2034,9 +2034,9 @@
       >public nivelEducacion nivelEducacion</text>
       <text name="Fig3.4.2"
         x="433"
-        y="440"
+        y="442"
         width="211"
-        height="16"
+        height="17"
         fill="0"
         fillcolor="white"
         stroke="0"
@@ -2050,9 +2050,9 @@
       >public perifl Perfil</text>
       <text name="Fig3.4.3"
         x="433"
-        y="456"
+        y="459"
         width="211"
-        height="16"
+        height="17"
         fill="0"
         fillcolor="white"
         stroke="0"
@@ -2066,9 +2066,9 @@
       >public String Movilidad</text>
       <text name="Fig3.4.4"
         x="433"
-        y="472"
+        y="476"
         width="211"
-        height="16"
+        height="17"
         fill="0"
         fillcolor="white"
         stroke="0"
@@ -2082,9 +2082,9 @@
       >public String dispHoraria</text>
       <text name="Fig3.4.5"
         x="433"
-        y="488"
+        y="493"
         width="211"
-        height="16"
+        height="17"
         fill="0"
         fillcolor="white"
         stroke="0"
@@ -2098,7 +2098,7 @@
       >public String docAdicional</text>
       <text name="Fig3.4.6"
         x="433"
-        y="504"
+        y="510"
         width="211"
         height="23"
         fill="0"
@@ -2115,7 +2115,7 @@
     </group>
     <rectangle name="Fig3.5"
       x="432"
-      y="550"
+      y="553"
       width="213"
       height="1"
       fill="1"
@@ -2124,7 +2124,7 @@
       strokecolor="black"
     />
     <group name="Fig3.6"
-         description="org.argouml.uml.diagram.ui.FigOperationsCompartment[433, 551, 211, 42]"
+         description="org.argouml.uml.diagram.ui.FigOperationsCompartment[433, 554, 211, 39]"
          href="-64--88-0--93-508f4824:16523c54d9d:-8000:00000000000009C3"
          fill="0"
          fillcolor="white"
@@ -2136,9 +2136,9 @@
       
       <rectangle name="Fig3.6.0"
         x="433"
-        y="551"
+        y="554"
         width="211"
-        height="42"
+        height="39"
         fill="0"
         fillcolor="white"
         stroke="0"
