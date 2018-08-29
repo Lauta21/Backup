@@ -6,6 +6,8 @@
 package poo.muni.ui;
 
 import Poo.Muni.Controler.GestorOficinaEmpleo;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 import javax.swing.JOptionPane;
 
 /**
@@ -468,6 +470,12 @@ public class AltaUsuario extends javax.swing.JFrame {
         JOptionPane.showMessageDialog(null,"Error la contraseña debe de tener mas de 5 caracteres","Error",JOptionPane.ERROR_MESSAGE);
         return;
     }
+    
+    if(!ValidarEmail(mail)){
+        JOptionPane.showMessageDialog(txtMail,"Error el correo no es valido","Error",JOptionPane.ERROR_MESSAGE);
+        return;
+    }
+        
             
     if(String.valueOf(contraseña).equals(String.valueOf(confirmarcontraseña))){
         JOptionPane.showMessageDialog(null,"Registro correcto","Informacion",JOptionPane.INFORMATION_MESSAGE);
@@ -484,6 +492,15 @@ public class AltaUsuario extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtNombreActionPerformed
 
+   
+    public  boolean ValidarEmail(String mail){
+        String regex =("^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@"
+                        + "[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$");
+        Pattern pattern = Pattern.compile(regex);
+        Matcher matcher = pattern.matcher(mail);
+         
+        return matcher.matches();  
+    }
     private void CancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CancelarActionPerformed
       txtNombre.setText("");
       txtApellido.setText("");

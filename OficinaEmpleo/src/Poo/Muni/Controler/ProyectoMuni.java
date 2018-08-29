@@ -4,10 +4,10 @@
  * and open the template in the editor.
  */
 package Poo.Muni.Controler;
- import Poo.Muni.Controler.GestorOficinaEmpleo;
 import Poo.Muni.Usuario;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.AnnotationConfiguration;
+
  
 /**
  *
@@ -28,6 +28,9 @@ public class ProyectoMuni {
          throw new ExceptionInInitializerError(ex);
         }
         new GestorOficinaEmpleo(factory).run();
+        
+        
+      
     }
      
 }
