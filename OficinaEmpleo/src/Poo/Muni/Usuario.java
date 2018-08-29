@@ -23,7 +23,7 @@ public class Usuario {
     @GeneratedValue
     @Column(name = "id_usuario")
     private String id_usuario;
-    @Column(name = "nombreUsusario")
+    @Column(name = "nombreUsuario")
     private String nombreUsuario;
     @Column(name = "contraseña")
     private String contraseña;
@@ -32,7 +32,7 @@ public class Usuario {
     @Column(name = "apellido")
     private String apellido;
     @Column(name = "fecha")
-    private Date fechaActual;
+    private Date fecha;
     @Column(name = "email")
     private String mail;
 
@@ -44,7 +44,7 @@ public class Usuario {
         this.contraseña = contraseña;
         this.nombre = nombre;
         this.apellido = apellido;
-        this.fechaActual = new Date();
+        this.fecha = new Date();
         this.mail = mail;
     }
     
@@ -79,10 +79,10 @@ public class Usuario {
         this.apellido = apellido;
     }
     public Date getFecha() {
-        return fechaActual;
+        return fecha;
     }
-    public void setFecha(Date fechaActual) {
-        this.fechaActual = fechaActual;
+    public void setFecha(Date fecha) {
+        this.fecha = fecha;
     }
     public String getId_usuario(){
         return id_usuario;

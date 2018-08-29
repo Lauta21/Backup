@@ -4,7 +4,7 @@ NombreUsuario nvarchar(50),
 Contraseña nvarchar(50),
 Nombre nvarchar(50),
 Apellido nvarchar(50),
-FechaSesion date,
+fecha date,
 primary key (id_usuario));
 
 create table AbstractPersona(
@@ -101,7 +101,7 @@ foreign key(id_abstracpersona) references AbstractPersona(id_abstracpersona),
 foreign key(id_usuario) references Usuario(id_usuario));
 
 alter table Usuario
-add  Email nvarchar(50)
+CHANGE FechaSesion fecha date
 
 select * from Usuario
 
