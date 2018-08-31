@@ -458,8 +458,8 @@ public class AltaUsuario extends javax.swing.JFrame {
         String confirmarcontraseña = txtConfirmarContraseña.getText().replaceAll(" ","");
         String nombre = txtNombre.getText();
         String apellido = txtApellido.getText();
-        String mail = txtMail.getText();
-        String nombreUsuario = txtnombreUsuario.getText().replaceAll(" ","");
+        String mail = txtMail.getText().replaceAll(" ","");
+        String nombreUsuario = txtnombreUsuario.getText();
         
         
        
@@ -479,13 +479,17 @@ public class AltaUsuario extends javax.swing.JFrame {
     }
     
     if(!gestor.isUsuarioExistente(nombreUsuario)){
-        JOptionPane.showMessageDialog(Email,"Error el usuario ya existe","Error",JOptionPane.ERROR_MESSAGE);
+        JOptionPane.showMessageDialog(null,"Error el usuario ya existe","Error",JOptionPane.ERROR_MESSAGE);
+        return;
+    }
+    if(nombreUsuario.contains(" ")){
+        JOptionPane.showMessageDialog(null,"No se puede usar espacio en el Usuario","Error",JOptionPane.ERROR_MESSAGE);
         return;
     }
         
             
     if(String.valueOf(contraseña).equals(String.valueOf(confirmarcontraseña))){
-        JOptionPane.showMessageDialog(null,"Registro correcto, " +"Tu usuario es: "+ nombreUsuario,"Informacion",JOptionPane.INFORMATION_MESSAGE);
+        JOptionPane.showMessageDialog(null,"Registro correcto, ","Informacion",JOptionPane.INFORMATION_MESSAGE);
     }else{
         JOptionPane.showMessageDialog(null,"Error las contraseñas no coinciden","Error", JOptionPane.ERROR_MESSAGE);    
     }  
