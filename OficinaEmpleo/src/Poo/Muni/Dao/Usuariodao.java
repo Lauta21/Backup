@@ -6,6 +6,10 @@
 package Poo.Muni.Dao;
 
 import Poo.Muni.Usuario;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.Statement;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -38,5 +42,27 @@ public class UsuarioDao {
         finally{
             session.close();
         }
+    }
+    
+    public boolean isUsuarioExitente(String nombreUsuario){
+        try {
+            String url = "";
+            Connection conn = DriverManager.getConnection(url, "root", "root");
+            Statement stmt = conn.createStatement();
+            ResultSet rs;
+            
+            rs = stmt.executeQuery("SELECT nombreUsuario FROM usuario WHERE nombreUsuario = '"+nombreUsuario+"'");
+            while (rs.next()) {
+             String lastName = rs.getString("nombreUsuario");
+             if(lastName.equals(nombreUsuario)){
+                 return false;
+                }
+            }
+            conn.close();
+        } catch (Exception e) {
+            System.err.println("Got an exception! ");
+            System.err.println(e.getMessage());
+        }
+        return true;
     }
 }

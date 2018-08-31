@@ -16,7 +16,7 @@ import poo.muni.ui.AltaUsuario;
  */
 public class GestorOficinaEmpleo {
      
-    private UsuarioDao usuarioDao;
+    private final UsuarioDao usuarioDao;
     public GestorOficinaEmpleo(SessionFactory sessionFactory){
         this.usuarioDao = new UsuarioDao(sessionFactory);
         
@@ -29,5 +29,9 @@ public class GestorOficinaEmpleo {
         Usuario usuario = new Usuario(nombre,apellido,contraseña,nombreUsuario,mail);
         usuarioDao.GuardarUsuario(usuario);
         
+    }
+    
+    public boolean isUsuarioExistente(String nombreUsuario){
+        return usuarioDao.isUsuarioExitente(nombreUsuario);
     }
 }

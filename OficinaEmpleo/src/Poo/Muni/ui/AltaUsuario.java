@@ -475,6 +475,11 @@ public class AltaUsuario extends javax.swing.JFrame {
         JOptionPane.showMessageDialog(txtMail,"Error el correo no es valido","Error",JOptionPane.ERROR_MESSAGE);
         return;
     }
+    
+    if(!gestor.isUsuarioExistente(nombreUsuario)){
+        JOptionPane.showMessageDialog(Email,"Error el usuario ya existe","Error",JOptionPane.ERROR_MESSAGE);
+        return;
+    }
         
             
     if(String.valueOf(contraseña).equals(String.valueOf(confirmarcontraseña))){
