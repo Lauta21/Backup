@@ -19,6 +19,7 @@ public class AltaUsuario extends javax.swing.JFrame {
     private final  GestorOficinaEmpleo gestor;    
     /**
      * Creates new form AltaUsuario
+     * @param gestor
      */
     public AltaUsuario(GestorOficinaEmpleo gestor) {
         
