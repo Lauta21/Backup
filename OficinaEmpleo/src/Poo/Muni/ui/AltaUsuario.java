@@ -454,12 +454,13 @@ public class AltaUsuario extends javax.swing.JFrame {
       
     public void GuardarAltaUsuario(){
          
-        String contraseña = txtContraseña.getText();
-        String confirmarcontraseña = txtConfirmarContraseña.getText();
+        String contraseña = txtContraseña.getText().replaceAll(" ","");
+        String confirmarcontraseña = txtConfirmarContraseña.getText().replaceAll(" ","");
         String nombre = txtNombre.getText();
         String apellido = txtApellido.getText();
         String mail = txtMail.getText();
-        String nombreUsuario = txtnombreUsuario.getText();
+        String nombreUsuario = txtnombreUsuario.getText().replaceAll(" ","");
+        
         
        
         
@@ -484,7 +485,7 @@ public class AltaUsuario extends javax.swing.JFrame {
         
             
     if(String.valueOf(contraseña).equals(String.valueOf(confirmarcontraseña))){
-        JOptionPane.showMessageDialog(null,"Registro correcto","Informacion",JOptionPane.INFORMATION_MESSAGE);
+        JOptionPane.showMessageDialog(null,"Registro correcto, " +"Tu usuario es: "+ nombreUsuario,"Informacion",JOptionPane.INFORMATION_MESSAGE);
     }else{
         JOptionPane.showMessageDialog(null,"Error las contraseñas no coinciden","Error", JOptionPane.ERROR_MESSAGE);    
     }  
@@ -508,12 +509,7 @@ public class AltaUsuario extends javax.swing.JFrame {
         return matcher.matches();  
     }
     private void CancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CancelarActionPerformed
-      txtNombre.setText("");
-      txtApellido.setText("");
-      txtContraseña.setText("");
-      txtConfirmarContraseña.setText("");
-      txtMail.setText("");
-      txtnombreUsuario.setText("");
+    dispose();
         // TODO add your handling code here:
     }//GEN-LAST:event_CancelarActionPerformed
 

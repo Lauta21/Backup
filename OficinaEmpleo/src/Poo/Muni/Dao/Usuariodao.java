@@ -21,9 +21,11 @@ import org.hibernate.Transaction;
  */
 public class UsuarioDao {
     private final SessionFactory sessionFactory;
-    
-    public UsuarioDao(SessionFactory sessionFactory){
+    private final Connection connection;
+            
+    public UsuarioDao(SessionFactory sessionFactory,Connection connection){
         this.sessionFactory = sessionFactory;
+        this.connection = connection;
     }
     
     public void GuardarUsuario(Usuario usuario){
@@ -46,9 +48,7 @@ public class UsuarioDao {
     
     public boolean isUsuarioExitente(String nombreUsuario){
         try {
-            String url = "";
-            Connection conn = DriverManager.getConnection(url, "root", "root");
-            Statement stmt = conn.createStatement();
+            Statement stmt = connection.createStatement();
             ResultSet rs;
             
             rs = stmt.executeQuery("SELECT nombreUsuario FROM usuario WHERE nombreUsuario = '"+nombreUsuario+"'");
@@ -58,7 +58,7 @@ public class UsuarioDao {
                  return false;
                 }
             }
-            conn.close();
+            connection.close();
         } catch (Exception e) {
             System.err.println("Got an exception! ");
             System.err.println(e.getMessage());

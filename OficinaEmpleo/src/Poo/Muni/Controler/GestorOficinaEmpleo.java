@@ -7,6 +7,7 @@ package Poo.Muni.Controler;
 
 import Poo.Muni.Dao.UsuarioDao;
 import Poo.Muni.Usuario;
+import java.sql.Connection;
 import org.hibernate.SessionFactory;
 import poo.muni.ui.AltaUsuario;
 
@@ -17,8 +18,10 @@ import poo.muni.ui.AltaUsuario;
 public class GestorOficinaEmpleo {
      
     private final UsuarioDao usuarioDao;
-    public GestorOficinaEmpleo(SessionFactory sessionFactory){
-        this.usuarioDao = new UsuarioDao(sessionFactory);
+    public GestorOficinaEmpleo(SessionFactory sessionFactory,Connection connection){
+        this.usuarioDao = new UsuarioDao(sessionFactory,connection);
+      
+       
         
     }
     public void run(){
@@ -34,4 +37,6 @@ public class GestorOficinaEmpleo {
     public boolean isUsuarioExistente(String nombreUsuario){
         return usuarioDao.isUsuarioExitente(nombreUsuario);
     }
+    
+  
 }
