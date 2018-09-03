@@ -7,6 +7,7 @@ package Poo.Muni.Controler;
 
 import Poo.Muni.Dao.UsuarioDao;
 import Poo.Muni.Usuario;
+import Poo.Muni.ui.LoginUsuario;
 import java.sql.Connection;
 import org.hibernate.SessionFactory;
 import poo.muni.ui.AltaUsuario;
@@ -26,6 +27,8 @@ public class GestorOficinaEmpleo {
     }
     public void run(){
         new AltaUsuario(this).setVisible(true);
+        new LoginUsuario().setVisible(true);
+
     }
     
     public void GuardarUsuario(String nombre,String apellido,String contraseña,String nombreUsuario,String mail){

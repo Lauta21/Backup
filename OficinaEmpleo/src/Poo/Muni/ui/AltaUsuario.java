@@ -9,6 +9,7 @@ import Poo.Muni.Controler.GestorOficinaEmpleo;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import javax.swing.JOptionPane;
+//import Poo.Muni.ui.LoginUsuario;
 
 /**
  *
@@ -489,7 +490,10 @@ public class AltaUsuario extends javax.swing.JFrame {
         
             
     if(String.valueOf(contraseña).equals(String.valueOf(confirmarcontraseña))){
-        JOptionPane.showMessageDialog(null,"Registro correcto, ","Informacion",JOptionPane.INFORMATION_MESSAGE);
+        JOptionPane.showMessageDialog(null,"Se registro correctamente ","Informacion",JOptionPane.INFORMATION_MESSAGE);
+        dispose();
+//        new LoginUsuario().setVisible(true);
+
     }else{
         JOptionPane.showMessageDialog(null,"Error las contraseñas no coinciden","Error", JOptionPane.ERROR_MESSAGE);    
     }  
