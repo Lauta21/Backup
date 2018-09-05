@@ -6,6 +6,8 @@
 package Poo.Muni.ui;
 
 import Poo.Muni.Controler.GestorOficinaEmpleo;
+import Poo.Muni.Usuario_;
+import javax.swing.JOptionPane;
 
 
 
@@ -183,14 +185,32 @@ public class LoginUsuario extends javax.swing.JFrame {
 
     private void LoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LoginActionPerformed
         // TODO add your handling code here:
-        String contraseña = txtcontraseña.getText();
-        String nombreUsuario = txtUsuario.getText();
-         gestor.Login(contraseña, nombreUsuario);
-         
+        LoginUsuario();
+      
          
      
     }//GEN-LAST:event_LoginActionPerformed
+ public void LoginUsuario(){
+     
+ String contraseña = txtcontraseña.getText();
+ String nombreUsuario = txtUsuario.getText();
+ gestor.Login(contraseña, nombreUsuario);
+    
+ if(nombreUsuario.contains(" ")){
+     JOptionPane.showMessageDialog(null,"Error no deje ningun campo vacio","Error",JOptionPane.ERROR_MESSAGE);
+     return;
+    }
 
+ if(gestor.Login(contraseña, nombreUsuario)){
+    JOptionPane.showMessageDialog(null,"Se a logeado con exito","Informacion",JOptionPane.INFORMATION_MESSAGE);
+    new Poo.Muni.ui.NewJFrame(gestor).setVisible(true);
+    dispose();
+    
+ }else{
+     JOptionPane.showMessageDialog(null,"La contraseña o el usuario no son correctos","Error",JOptionPane.ERROR_MESSAGE);
+ }
+    
+}
     private void RegistrarseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RegistrarseActionPerformed
         // TODO add your handling code here:
      new poo.muni.ui.AltaUsuario(gestor).setVisible(true);
