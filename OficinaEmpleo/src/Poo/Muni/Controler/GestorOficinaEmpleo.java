@@ -9,8 +9,8 @@ import Poo.Muni.Dao.UsuarioDao;
 import Poo.Muni.Usuario;
 import Poo.Muni.ui.LoginUsuario;
 import java.sql.Connection;
+import javax.persistence.metamodel.SingularAttribute;
 import org.hibernate.SessionFactory;
-import poo.muni.ui.AltaUsuario;
 
 /**
  *
@@ -26,8 +26,7 @@ public class GestorOficinaEmpleo {
         
     }
     public void run(){
-        new AltaUsuario(this).setVisible(true);
-        new LoginUsuario().setVisible(true);
+        new LoginUsuario(this).setVisible(true);
 
     }
     
@@ -41,5 +40,8 @@ public class GestorOficinaEmpleo {
         return usuarioDao.isUsuarioExitente(nombreUsuario);
     }
     
-  
+    public void Login(String contraseña,String nombreUsuario){
+        usuarioDao.Login(nombreUsuario, contraseña);
+    }
+
 }

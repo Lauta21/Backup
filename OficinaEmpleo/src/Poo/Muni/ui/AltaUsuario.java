@@ -492,9 +492,9 @@ public class AltaUsuario extends javax.swing.JFrame {
     if(String.valueOf(contraseña).equals(String.valueOf(confirmarcontraseña))){
         JOptionPane.showMessageDialog(null,"Se registro correctamente ","Informacion",JOptionPane.INFORMATION_MESSAGE);
         dispose();
-//        new LoginUsuario().setVisible(true);
+        new Poo.Muni.ui.LoginUsuario(gestor).setVisible(true);
 
-    }else{
+        }else{
         JOptionPane.showMessageDialog(null,"Error las contraseñas no coinciden","Error", JOptionPane.ERROR_MESSAGE);    
     }  
     

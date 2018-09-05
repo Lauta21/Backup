@@ -64,23 +64,20 @@ public class UsuarioDao {
         }
         return true;
     }
-    public boolean Login(Usuario usuario){
+    public boolean Login(String nombreUsuario,String contaseña){
         try {
+            
             Statement stmt = connection.createStatement();
             ResultSet rs;
             
-            rs = stmt.executeQuery("SELECT id,usuario,contraseña,nombre FROM Usuario WHERE usuario = ?");
-            if(rs.next()) {
-           
-             if(usuario.getContraseña().equals(rs.getString(3))){
-                 usuario.setId_usuario(rs.getString(1));
-                 usuario.setNombreUsuario(rs.getString(2));
-                 usuario.setNombre(rs.getString(4));
-                 return true;
-                }
-             else{
+            
+            rs = stmt.executeQuery("SELECT nombreUsuario,contraseña FROM usuario WHERE nombreUsuario = '"+ nombreUsuario+"'" + "And contraseña='" + contaseña +"'" );
+             while (rs.next()) {
+             String lastName = rs.getString("nombreUsuario");
+             String lastContraseña = rs.getString("contraseña");
+             if(lastName.equals(nombreUsuario) && lastContraseña.equals(contaseña)){
                  return false;
-             }
+                }
             }
             connection.close();
             return false;

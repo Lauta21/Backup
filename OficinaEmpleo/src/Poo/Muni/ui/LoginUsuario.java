@@ -5,27 +5,24 @@
  */
 package Poo.Muni.ui;
 
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import java.sql.Connection;
+import Poo.Muni.Controler.GestorOficinaEmpleo;
+
+
 
 /**
  *
  * @author Capacitacion3
  */
 public class LoginUsuario extends javax.swing.JFrame {
-          
+          GestorOficinaEmpleo gestor;
 
     /**
      * Creates new form LoginUsuario
+     * @param gestor
      */
-    public LoginUsuario() {
-     
-        
+    public LoginUsuario(GestorOficinaEmpleo gestor) {
         initComponents();
+        this.gestor = gestor;
     }
 
     
@@ -48,7 +45,6 @@ public class LoginUsuario extends javax.swing.JFrame {
         Registrarse = new javax.swing.JButton();
         ContraseñaOlvidada = new javax.swing.JLabel();
         txtcontraseña = new javax.swing.JPasswordField();
-        msj = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -93,44 +89,31 @@ public class LoginUsuario extends javax.swing.JFrame {
             }
         });
 
-        msj.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        msj.setForeground(new java.awt.Color(255, 255, 255));
-        msj.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        msj.setText("¡Datos incorrectos, intente nuevamente!");
-
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addComponent(txtcontraseña, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGroup(jPanel1Layout.createSequentialGroup()
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addGroup(jPanel1Layout.createSequentialGroup()
-                                    .addContainerGap()
-                                    .addComponent(Login, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
-                                    .addGap(142, 142, 142)
-                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                        .addComponent(Contraseña)
-                                        .addComponent(Usuario))))
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addGroup(jPanel1Layout.createSequentialGroup()
-                                    .addGap(66, 66, 66)
-                                    .addComponent(txtUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(Registrarse)))))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(210, 210, 210)
+                        .addGap(142, 142, 142)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(Contraseña)
+                            .addComponent(Usuario)
+                            .addComponent(Login, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(79, 79, 79)
+                                .addComponent(Registrarse))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(66, 66, 66)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(txtcontraseña, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(txtUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(206, 206, 206)
                         .addComponent(ContraseñaOlvidada)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addGap(0, 88, Short.MAX_VALUE)
-                .addComponent(msj, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(76, 76, 76))
+                .addContainerGap(151, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -144,14 +127,12 @@ public class LoginUsuario extends javax.swing.JFrame {
                     .addComponent(Contraseña)
                     .addComponent(txtcontraseña, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addComponent(msj, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(39, 39, 39)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(Login)
                     .addComponent(Registrarse))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(18, 18, 18)
                 .addComponent(ContraseñaOlvidada)
-                .addGap(18, 18, 18))
+                .addGap(80, 80, 80))
         );
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
@@ -186,11 +167,21 @@ public class LoginUsuario extends javax.swing.JFrame {
 
     private void LoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LoginActionPerformed
         // TODO add your handling code here:
+        String contraseña = txtcontraseña.getText();
+        String nombreUsuario = txtUsuario.getText();
+         gestor.Login(contraseña, nombreUsuario);
+         
+         
+     
     }//GEN-LAST:event_LoginActionPerformed
 
     private void RegistrarseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RegistrarseActionPerformed
         // TODO add your handling code here:
+     new poo.muni.ui.AltaUsuario(gestor).setVisible(true);
+     dispose();
 
+     
+     
     }//GEN-LAST:event_RegistrarseActionPerformed
 
     private void ContraseñaOlvidadaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ContraseñaOlvidadaMouseClicked
@@ -240,7 +231,6 @@ public class LoginUsuario extends javax.swing.JFrame {
     private javax.swing.JLabel Usuario;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JLabel msj;
     private javax.swing.JTextField txtUsuario;
     private javax.swing.JPasswordField txtcontraseña;
     // End of variables declaration//GEN-END:variables
