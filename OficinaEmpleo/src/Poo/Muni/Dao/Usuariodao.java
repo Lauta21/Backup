@@ -76,11 +76,10 @@ public class UsuarioDao {
              String lastName = rs.getString("nombreUsuario");
              String lastContraseña = rs.getString("contraseña");
              if(lastName.equals(nombreUsuario) && lastContraseña.equals(contaseña)){
-                 return false;
+                 return true;
                 }
             }
             connection.close();
-            return false;
         } catch (Exception e) {
             System.err.println("Got an exception! ");
             System.err.println(e.getMessage());

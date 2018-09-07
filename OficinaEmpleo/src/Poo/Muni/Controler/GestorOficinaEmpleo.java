@@ -39,7 +39,7 @@ public class GestorOficinaEmpleo {
         return usuarioDao.isUsuarioExitente(nombreUsuario);
     }
     
-    public boolean Login(String contraseña,String nombreUsuario){
+    public boolean Login(String nombreUsuario,String contraseña){
         return usuarioDao.Login(nombreUsuario, contraseña);
     }
 

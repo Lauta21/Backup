@@ -192,17 +192,18 @@ public class LoginUsuario extends javax.swing.JFrame {
     }//GEN-LAST:event_LoginActionPerformed
  public void LoginUsuario(){
      
+ String nombreUsuario = txtUsuario.getText();   
  String contraseña = txtcontraseña.getText();
- String nombreUsuario = txtUsuario.getText();
- gestor.Login(contraseña, nombreUsuario);
+ 
+ gestor.Login(nombreUsuario,contraseña);
     
  if(nombreUsuario.contains(" ")){
      JOptionPane.showMessageDialog(null,"Error no deje ningun campo vacio","Error",JOptionPane.ERROR_MESSAGE);
      return;
     }
 
- if(gestor.Login(contraseña, nombreUsuario)){
-    JOptionPane.showMessageDialog(null,"Se a logeado con exito","Informacion",JOptionPane.INFORMATION_MESSAGE);
+ if(gestor.Login(nombreUsuario,contraseña)){
+    JOptionPane.showMessageDialog(null,"A iniciado sesion exitosamente","Informacion",JOptionPane.INFORMATION_MESSAGE);
     new Poo.Muni.ui.NewJFrame(gestor).setVisible(true);
     dispose();
     
