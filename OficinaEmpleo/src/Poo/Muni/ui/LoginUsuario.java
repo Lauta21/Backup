@@ -204,7 +204,7 @@ public class LoginUsuario extends javax.swing.JFrame {
 
  if(gestor.Login(nombreUsuario,contraseña)){
     JOptionPane.showMessageDialog(null,"A iniciado sesion exitosamente","Informacion",JOptionPane.INFORMATION_MESSAGE);
-    new Poo.Muni.ui.NewJFrame(gestor).setVisible(true);
+    new Poo.Muni.ui.PantallaPrincipal(gestor, nombreUsuario).setVisible(true);
     dispose();
     
  }else{
