@@ -1,0 +1,80 @@
+Revista
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class Revista {
+    
+    private List<Articulo> elementos;
+    private String titulo;
+    private int ejemplar;
+
+    public Revista(String titulo, int ejemplar) {
+        this.titulo = titulo;
+        this.ejemplar = ejemplar;
+        this.elementos = new ArrayList<>();
+    }
+    
+    public boolean addElemento(Articulo articulo){
+        return elementos.add(articulo);
+    }
+    
+    public Articulo getArticulosEnPosicion(int posicion){
+     Articulo articulo = null;
+     if(elementos.size() > 0 && elementos.size() <= posicion ){
+            articulo = elementos.get(posicion);   
+            }
+       
+        return articulo;
+    }   
+}
+------------------------------------------------------------------------------------------------------
+Articulo
+
+import java.util.ArrayList;
+import java.util.List;
+
+
+   public class Articulo {
+    
+    String titulo;
+    private String periodista;
+    List<String> temas;
+    private int palabras;
+    String texto;
+    Long idArtucilo;
+
+    public Articulo(String titulo, String periodista, int palabras, String texto, Long idArtucilo) {
+        this.titulo = titulo;
+        this.periodista = periodista;
+        this.temas = new ArrayList<String>();
+        this.palabras = palabras;
+        this.texto = texto;
+        this.idArtucilo = idArtucilo;
+    }
+    public boolean addTema(String tema){     
+      return temas.add(tema);
+    }
+     
+    public boolean contieneTema(String tema){
+    return temas.contains(tema);
+    }
+
+    public String getPeriodista(){
+     return periodista;
+    }
+   
+    public void setPeriodista(String periodista){
+    this.periodista = periodista;
+    }
+  
+    public int getPalabras(){
+    return palabras;
+    }
+
+    public void setPalabras(int palabras){
+    this.palabras = palabras;
+    }
+    
+------------------------------------------------------------------------------------------------------
+
