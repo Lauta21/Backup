@@ -36,93 +36,28 @@ public class PantallaPrincipal extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        menuBar1 = new java.awt.MenuBar();
-        menu1 = new java.awt.Menu();
-        menu2 = new java.awt.Menu();
-        menuBar2 = new java.awt.MenuBar();
-        menu3 = new java.awt.Menu();
-        menu4 = new java.awt.Menu();
-        jMenu3 = new javax.swing.JMenu();
-        jMenu4 = new javax.swing.JMenu();
-        jMenuItem1 = new javax.swing.JMenuItem();
-        jMenuBar2 = new javax.swing.JMenuBar();
-        jMenu5 = new javax.swing.JMenu();
-        jMenu6 = new javax.swing.JMenu();
-        jPopupMenu1 = new javax.swing.JPopupMenu();
-        jRadioButtonMenuItem1 = new javax.swing.JRadioButtonMenuItem();
-        jPopupMenu2 = new javax.swing.JPopupMenu();
-        jMenuItem2 = new javax.swing.JMenuItem();
-        scrollPane1 = new java.awt.ScrollPane();
-        jPopupMenu3 = new javax.swing.JPopupMenu();
-        jMenuBar3 = new javax.swing.JMenuBar();
-        jMenu7 = new javax.swing.JMenu();
-        jMenu8 = new javax.swing.JMenu();
-        jPopupMenu4 = new javax.swing.JPopupMenu();
-        jMenu9 = new javax.swing.JMenu();
-        jMenuItem5 = new javax.swing.JMenuItem();
-        jRadioButtonMenuItem2 = new javax.swing.JRadioButtonMenuItem();
-        jCheckBoxMenuItem1 = new javax.swing.JCheckBoxMenuItem();
-        jPopupMenu5 = new javax.swing.JPopupMenu();
-        jButton1 = new javax.swing.JButton();
+        BotonCerrarSesion = new javax.swing.JButton();
         jInternalFrame1 = new javax.swing.JInternalFrame();
         txtshowUsuario = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu2 = new javax.swing.JMenu();
         menConfigurar = new javax.swing.JMenuItem();
         jMenu11 = new javax.swing.JMenu();
+        jRadioButtonMenuItem3 = new javax.swing.JRadioButtonMenuItem();
+        jMenuItem4 = new javax.swing.JMenuItem();
         jMenu10 = new javax.swing.JMenu();
-
-        menu1.setLabel("File");
-        menuBar1.add(menu1);
-
-        menu2.setLabel("Edit");
-        menuBar1.add(menu2);
-
-        menu3.setLabel("File");
-        menuBar2.add(menu3);
-
-        menu4.setLabel("Edit");
-        menuBar2.add(menu4);
-
-        jMenu3.setText("jMenu3");
-
-        jMenu4.setText("jMenu4");
-
-        jMenuItem1.setText("jMenuItem1");
-
-        jMenu5.setText("File");
-        jMenuBar2.add(jMenu5);
-
-        jMenu6.setText("Edit");
-        jMenuBar2.add(jMenu6);
-
-        jRadioButtonMenuItem1.setSelected(true);
-        jRadioButtonMenuItem1.setText("jRadioButtonMenuItem1");
-
-        jMenuItem2.setText("jMenuItem2");
-
-        jMenu7.setText("File");
-        jMenuBar3.add(jMenu7);
-
-        jMenu8.setText("Edit");
-        jMenuBar3.add(jMenu8);
-
-        jMenu9.setText("jMenu9");
-
-        jMenuItem5.setText("jMenuItem5");
-
-        jRadioButtonMenuItem2.setSelected(true);
-        jRadioButtonMenuItem2.setText("jRadioButtonMenuItem2");
-
-        jCheckBoxMenuItem1.setSelected(true);
-        jCheckBoxMenuItem1.setText("jCheckBoxMenuItem1");
+        jMenuItem3 = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setBackground(new java.awt.Color(102, 102, 102));
 
-        jButton1.setText("jButton1");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        BotonCerrarSesion.setBackground(new java.awt.Color(102, 102, 102));
+        BotonCerrarSesion.setForeground(new java.awt.Color(204, 204, 0));
+        BotonCerrarSesion.setText("Cerrar Sesion");
+        BotonCerrarSesion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                BotonCerrarSesionActionPerformed(evt);
             }
         });
 
@@ -139,6 +74,8 @@ public class PantallaPrincipal extends javax.swing.JFrame {
             .addGap(0, 0, Short.MAX_VALUE)
         );
 
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Poo/Muni/ui/logo2.png"))); // NOI18N
+
         jMenu2.setText("Pefil");
 
         menConfigurar.setText("Datos");
@@ -152,9 +89,24 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         jMenuBar1.add(jMenu2);
 
         jMenu11.setText("Postulante");
+
+        jRadioButtonMenuItem3.setSelected(true);
+        jRadioButtonMenuItem3.setText("MisPostulaciones");
+        jMenu11.add(jRadioButtonMenuItem3);
+        jMenu11.add(jMenuItem4);
+
         jMenuBar1.add(jMenu11);
 
         jMenu10.setText("Empresa");
+
+        jMenuItem3.setText("Ingresar Empresa");
+        jMenuItem3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem3ActionPerformed(evt);
+            }
+        });
+        jMenu10.add(jMenuItem3);
+
         jMenuBar1.add(jMenu10);
 
         setJMenuBar(jMenuBar1);
@@ -164,33 +116,43 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(237, Short.MAX_VALUE)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(142, 142, 142))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jLabel1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(txtshowUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(165, 165, 165)
+                .addComponent(BotonCerrarSesion, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(166, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addComponent(txtshowUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 211, Short.MAX_VALUE)
-                .addComponent(jButton1)
-                .addGap(73, 73, 73))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(txtshowUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel1))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 317, Short.MAX_VALUE)
+                .addComponent(BotonCerrarSesion)
+                .addContainerGap())
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void BotonCerrarSesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonCerrarSesionActionPerformed
         // TODO add your handling code here:
         dispose();
-    }//GEN-LAST:event_jButton1ActionPerformed
+        new Poo.Muni.ui.LoginUsuario(gestor).setVisible(true);
+       
+    }//GEN-LAST:event_BotonCerrarSesionActionPerformed
 
     private void menConfigurarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menConfigurarActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_menConfigurarActionPerformed
+
+    private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jMenuItem3ActionPerformed
 
 //    /**
 //     * @param args the command line arguments
@@ -228,40 +190,17 @@ public class PantallaPrincipal extends javax.swing.JFrame {
 //    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JCheckBoxMenuItem jCheckBoxMenuItem1;
+    private javax.swing.JButton BotonCerrarSesion;
     private javax.swing.JInternalFrame jInternalFrame1;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JMenu jMenu10;
     private javax.swing.JMenu jMenu11;
     private javax.swing.JMenu jMenu2;
-    private javax.swing.JMenu jMenu3;
-    private javax.swing.JMenu jMenu4;
-    private javax.swing.JMenu jMenu5;
-    private javax.swing.JMenu jMenu6;
-    private javax.swing.JMenu jMenu7;
-    private javax.swing.JMenu jMenu8;
-    private javax.swing.JMenu jMenu9;
     private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JMenuBar jMenuBar2;
-    private javax.swing.JMenuBar jMenuBar3;
-    private javax.swing.JMenuItem jMenuItem1;
-    private javax.swing.JMenuItem jMenuItem2;
-    private javax.swing.JMenuItem jMenuItem5;
-    private javax.swing.JPopupMenu jPopupMenu1;
-    private javax.swing.JPopupMenu jPopupMenu2;
-    private javax.swing.JPopupMenu jPopupMenu3;
-    private javax.swing.JPopupMenu jPopupMenu4;
-    private javax.swing.JPopupMenu jPopupMenu5;
-    private javax.swing.JRadioButtonMenuItem jRadioButtonMenuItem1;
-    private javax.swing.JRadioButtonMenuItem jRadioButtonMenuItem2;
+    private javax.swing.JMenuItem jMenuItem3;
+    private javax.swing.JMenuItem jMenuItem4;
+    private javax.swing.JRadioButtonMenuItem jRadioButtonMenuItem3;
     private javax.swing.JMenuItem menConfigurar;
-    private java.awt.Menu menu1;
-    private java.awt.Menu menu2;
-    private java.awt.Menu menu3;
-    private java.awt.Menu menu4;
-    private java.awt.MenuBar menuBar1;
-    private java.awt.MenuBar menuBar2;
-    private java.awt.ScrollPane scrollPane1;
     private javax.swing.JLabel txtshowUsuario;
     // End of variables declaration//GEN-END:variables
 }

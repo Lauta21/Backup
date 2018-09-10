@@ -64,16 +64,19 @@ public class LoginUsuario extends javax.swing.JFrame {
         Contraseña.setForeground(new java.awt.Color(204, 204, 0));
         Contraseña.setText("Contraseña");
 
+        Login.setBackground(new java.awt.Color(204, 204, 204));
         Login.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         Login.setForeground(new java.awt.Color(102, 102, 102));
         Login.setText("Login");
         Login.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        Login.setHideActionText(true);
         Login.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 LoginActionPerformed(evt);
             }
         });
 
+        Registrarse.setBackground(new java.awt.Color(204, 204, 204));
         Registrarse.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         Registrarse.setForeground(new java.awt.Color(102, 102, 102));
         Registrarse.setText("Registrarse");
@@ -92,6 +95,7 @@ public class LoginUsuario extends javax.swing.JFrame {
             }
         });
 
+        jButton1.setBackground(new java.awt.Color(204, 204, 204));
         jButton1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jButton1.setForeground(new java.awt.Color(102, 102, 102));
         jButton1.setText("Salir");
@@ -114,20 +118,17 @@ public class LoginUsuario extends javax.swing.JFrame {
                             .addComponent(Contraseña)
                             .addComponent(Usuario)
                             .addComponent(Login, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(66, 66, 66)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(txtcontraseña, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(txtUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(79, 79, 79)
-                                .addComponent(Registrarse))))
+                        .addGap(66, 66, 66)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(txtcontraseña, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(txtUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(Registrarse)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(206, 206, 206)
+                        .addGap(211, 211, 211)
                         .addComponent(ContraseñaOlvidada))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(214, 214, 214)
+                        .addGap(227, 227, 227)
                         .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(151, Short.MAX_VALUE))
         );
@@ -146,11 +147,11 @@ public class LoginUsuario extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(Login)
                     .addComponent(Registrarse))
-                .addGap(18, 18, 18)
+                .addGap(27, 27, 27)
                 .addComponent(ContraseñaOlvidada)
-                .addGap(34, 34, 34)
+                .addGap(26, 26, 26)
                 .addComponent(jButton1)
-                .addGap(23, 23, 23))
+                .addGap(22, 22, 22))
         );
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
@@ -228,6 +229,7 @@ public class LoginUsuario extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
         dispose();
+        
     }//GEN-LAST:event_jButton1ActionPerformed
 
 //    /**
