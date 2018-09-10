@@ -68,8 +68,8 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         txtshowUsuario = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu2 = new javax.swing.JMenu();
-        jMenuItem4 = new javax.swing.JMenuItem();
-        jMenu1 = new javax.swing.JMenu();
+        menConfigurar = new javax.swing.JMenuItem();
+        jMenu11 = new javax.swing.JMenu();
         jMenu10 = new javax.swing.JMenu();
 
         menu1.setLabel("File");
@@ -141,13 +141,18 @@ public class PantallaPrincipal extends javax.swing.JFrame {
 
         jMenu2.setText("Pefil");
 
-        jMenuItem4.setText("jMenuItem4");
-        jMenu2.add(jMenuItem4);
+        menConfigurar.setText("Datos");
+        menConfigurar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menConfigurarActionPerformed(evt);
+            }
+        });
+        jMenu2.add(menConfigurar);
 
         jMenuBar1.add(jMenu2);
 
-        jMenu1.setText("Postulaciones");
-        jMenuBar1.add(jMenu1);
+        jMenu11.setText("Postulante");
+        jMenuBar1.add(jMenu11);
 
         jMenu10.setText("Empresa");
         jMenuBar1.add(jMenu10);
@@ -159,7 +164,7 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(150, Short.MAX_VALUE)
+                .addContainerGap(237, Short.MAX_VALUE)
                 .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(142, 142, 142))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
@@ -170,7 +175,7 @@ public class PantallaPrincipal extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addComponent(txtshowUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 201, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 211, Short.MAX_VALUE)
                 .addComponent(jButton1)
                 .addGap(73, 73, 73))
         );
@@ -182,6 +187,10 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         // TODO add your handling code here:
         dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void menConfigurarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menConfigurarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_menConfigurarActionPerformed
 
 //    /**
 //     * @param args the command line arguments
@@ -222,8 +231,8 @@ public class PantallaPrincipal extends javax.swing.JFrame {
     private javax.swing.JButton jButton1;
     private javax.swing.JCheckBoxMenuItem jCheckBoxMenuItem1;
     private javax.swing.JInternalFrame jInternalFrame1;
-    private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu10;
+    private javax.swing.JMenu jMenu11;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;
     private javax.swing.JMenu jMenu4;
@@ -237,7 +246,6 @@ public class PantallaPrincipal extends javax.swing.JFrame {
     private javax.swing.JMenuBar jMenuBar3;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem2;
-    private javax.swing.JMenuItem jMenuItem4;
     private javax.swing.JMenuItem jMenuItem5;
     private javax.swing.JPopupMenu jPopupMenu1;
     private javax.swing.JPopupMenu jPopupMenu2;
@@ -246,6 +254,7 @@ public class PantallaPrincipal extends javax.swing.JFrame {
     private javax.swing.JPopupMenu jPopupMenu5;
     private javax.swing.JRadioButtonMenuItem jRadioButtonMenuItem1;
     private javax.swing.JRadioButtonMenuItem jRadioButtonMenuItem2;
+    private javax.swing.JMenuItem menConfigurar;
     private java.awt.Menu menu1;
     private java.awt.Menu menu2;
     private java.awt.Menu menu3;

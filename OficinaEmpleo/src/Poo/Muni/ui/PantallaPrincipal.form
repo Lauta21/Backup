@@ -167,16 +167,19 @@
             <Property name="text" type="java.lang.String" value="Pefil"/>
           </Properties>
           <SubComponents>
-            <MenuItem class="javax.swing.JMenuItem" name="jMenuItem4">
+            <MenuItem class="javax.swing.JMenuItem" name="menConfigurar">
               <Properties>
-                <Property name="text" type="java.lang.String" value="jMenuItem4"/>
+                <Property name="text" type="java.lang.String" value="Datos"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="menConfigurarActionPerformed"/>
+              </Events>
             </MenuItem>
           </SubComponents>
         </Menu>
-        <Menu class="javax.swing.JMenu" name="jMenu1">
+        <Menu class="javax.swing.JMenu" name="jMenu11">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Postulaciones"/>
+            <Property name="text" type="java.lang.String" value="Postulante"/>
           </Properties>
         </Menu>
         <Menu class="javax.swing.JMenu" name="jMenu10">
@@ -211,7 +214,7 @@
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="1" attributes="0">
-              <EmptySpace pref="150" max="32767" attributes="0"/>
+              <EmptySpace pref="237" max="32767" attributes="0"/>
               <Component id="jButton1" min="-2" pref="97" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="142" max="-2" attributes="0"/>
           </Group>
@@ -225,7 +228,7 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="1" attributes="0">
               <Component id="txtshowUsuario" min="-2" pref="32" max="-2" attributes="0"/>
-              <EmptySpace pref="201" max="32767" attributes="0"/>
+              <EmptySpace pref="211" max="32767" attributes="0"/>
               <Component id="jButton1" min="-2" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="73" max="-2" attributes="0"/>
           </Group>
