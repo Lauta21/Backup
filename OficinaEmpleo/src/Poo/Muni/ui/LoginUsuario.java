@@ -6,7 +6,6 @@
 package Poo.Muni.ui;
 
 import Poo.Muni.Controler.GestorOficinaEmpleo;
-import Poo.Muni.Usuario_;
 import javax.swing.JOptionPane;
 
 

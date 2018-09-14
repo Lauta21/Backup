@@ -51,9 +51,9 @@ public abstract class Persona {
     public Persona() {
     }
      
-     public void Personas(){
-         
-     }
+    public void Personas(){
+    }
+    
     public Persona(String nombre, String apellido, Integer DNI, String cuil_Cuit, String sexo, String direccion, String distrito, int telPrincipal, int telAlternativo, Date fechadeNacimiento, String email, int edad) {
         this.nombre = nombre;
         this.apellido = apellido;

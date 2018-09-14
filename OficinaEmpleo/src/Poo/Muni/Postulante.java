@@ -11,7 +11,10 @@ import java.util.Date;
  *
  * @author Capacitacion3
  */
+
 public class Postulante extends Persona{
+
+    private String id_postulante;
     private NivelEducacion nivelEducacion;
     private Perfil perfil;
     private Programa programa;
@@ -34,6 +37,12 @@ public class Postulante extends Persona{
     public Postulante(String nombre, String apellido, Integer DNI, String cuil_Cuit, String sexo, String direccion, String distrito, int telPrincipal, int telAlternativo, Date fechadeNacimiento, String email, int edad) {
         super(nombre, apellido, DNI, cuil_Cuit, sexo, direccion, distrito, telPrincipal, telAlternativo, fechadeNacimiento, email, edad);
     }
+    public String getId_postulante() {
+        return id_postulante;
+    }
+    public void setId_postulante(String id_postulante) {
+        this.id_postulante = id_postulante;
+    }   
     public NivelEducacion getNivelEducacion() {
         return nivelEducacion;
     }
