@@ -6,6 +6,7 @@
 package Poo.Muni.ui;
 
 import Poo.Muni.Controler.GestorOficinaEmpleo;
+import java.awt.event.KeyEvent;
 
 /**
  *
@@ -23,8 +24,17 @@ public class PantallaPrincipal extends javax.swing.JFrame {
        initComponents();
        this.gestor = gestor;
        this.nombreUsuario = nombreUsuario;
-       txtshowUsuario.setText(nombreUsuario);
-        
+       txtshowUsuario.setText(nombreUsuario);       
+    }
+    
+    public void keyTyped(KeyEvent e) {
+    char c = e.getKeyChar();
+    if (!(Character.isDigit(c) ||
+    (c == KeyEvent.VK_BACK_SPACE) ||
+    (c == KeyEvent.VK_DELETE))) {
+    getToolkit().beep();
+    e.consume();
+        }
     }
 
     /**
@@ -39,13 +49,11 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         BotonCerrarSesion = new javax.swing.JButton();
         jInternalFrame1 = new javax.swing.JInternalFrame();
         txtshowUsuario = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
+        txtLogo = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu2 = new javax.swing.JMenu();
-        menConfigurar = new javax.swing.JMenuItem();
-        jMenu11 = new javax.swing.JMenu();
-        jMenuItem1 = new javax.swing.JMenuItem();
-        jMenu10 = new javax.swing.JMenu();
+        menPostularme = new javax.swing.JMenuItem();
+        menEmpresa = new javax.swing.JMenuItem();
         jMenuItem3 = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -73,33 +81,25 @@ public class PantallaPrincipal extends javax.swing.JFrame {
             .addGap(0, 0, Short.MAX_VALUE)
         );
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Poo/Muni/ui/logo2.png"))); // NOI18N
+        txtLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Poo/Muni/ui/logo2.png"))); // NOI18N
 
-        jMenu2.setText("Pefil");
+        jMenu2.setText("Menu");
 
-        menConfigurar.setText("Datos");
-        menConfigurar.addActionListener(new java.awt.event.ActionListener() {
+        menPostularme.setText("Postularme");
+        menPostularme.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                menConfigurarActionPerformed(evt);
+                menPostularmeActionPerformed(evt);
             }
         });
-        jMenu2.add(menConfigurar);
+        jMenu2.add(menPostularme);
 
-        jMenuBar1.add(jMenu2);
-
-        jMenu11.setText("Postulante");
-
-        jMenuItem1.setText("Postularme");
-        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+        menEmpresa.setText("Datos");
+        menEmpresa.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem1ActionPerformed(evt);
+                menEmpresaActionPerformed(evt);
             }
         });
-        jMenu11.add(jMenuItem1);
-
-        jMenuBar1.add(jMenu11);
-
-        jMenu10.setText("Empresa");
+        jMenu2.add(menEmpresa);
 
         jMenuItem3.setText("Ingresar Empresa");
         jMenuItem3.addActionListener(new java.awt.event.ActionListener() {
@@ -107,9 +107,9 @@ public class PantallaPrincipal extends javax.swing.JFrame {
                 jMenuItem3ActionPerformed(evt);
             }
         });
-        jMenu10.add(jMenuItem3);
+        jMenu2.add(jMenuItem3);
 
-        jMenuBar1.add(jMenu10);
+        jMenuBar1.add(jMenu2);
 
         setJMenuBar(jMenuBar1);
 
@@ -118,21 +118,23 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(0, 217, Short.MAX_VALUE)
-                .addComponent(jLabel1)
-                .addGap(18, 18, 18)
-                .addComponent(txtshowUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(BotonCerrarSesion, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(0, 331, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(BotonCerrarSesion, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(txtLogo)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(txtshowUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(0, 351, Short.MAX_VALUE)
+                .addGap(0, 150, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(BotonCerrarSesion, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(txtshowUsuario, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(txtLogo)
+                    .addComponent(txtshowUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(BotonCerrarSesion))
         );
 
         pack();
@@ -145,19 +147,18 @@ public class PantallaPrincipal extends javax.swing.JFrame {
        
     }//GEN-LAST:event_BotonCerrarSesionActionPerformed
 
-    private void menConfigurarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menConfigurarActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_menConfigurarActionPerformed
-
     private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jMenuItem3ActionPerformed
 
-    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
+    private void menPostularmeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menPostularmeActionPerformed
         // TODO add your handling code here:
         new Poo.Muni.ui.PantallaPostulacion().setVisible(true);
-        dispose();
-    }//GEN-LAST:event_jMenuItem1ActionPerformed
+    }//GEN-LAST:event_menPostularmeActionPerformed
+
+    private void menEmpresaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menEmpresaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_menEmpresaActionPerformed
 
 //    /**
 //     * @param args the command line arguments
@@ -197,14 +198,12 @@ public class PantallaPrincipal extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BotonCerrarSesion;
     private javax.swing.JInternalFrame jInternalFrame1;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JMenu jMenu10;
-    private javax.swing.JMenu jMenu11;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem3;
-    private javax.swing.JMenuItem menConfigurar;
+    private javax.swing.JMenuItem menEmpresa;
+    private javax.swing.JMenuItem menPostularme;
+    private javax.swing.JLabel txtLogo;
     private javax.swing.JLabel txtshowUsuario;
     // End of variables declaration//GEN-END:variables
 }

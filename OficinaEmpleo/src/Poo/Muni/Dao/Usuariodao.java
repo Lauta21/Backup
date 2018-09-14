@@ -69,6 +69,7 @@ public class UsuarioDao {
             
             Statement stmt = connection.createStatement();
             ResultSet rs;
+           
             
             
             rs = stmt.executeQuery("SELECT nombreUsuario,contraseña FROM usuario WHERE nombreUsuario = '"+ nombreUsuario+"'" + "And contraseña='" + contaseña +"'" );
@@ -79,11 +80,14 @@ public class UsuarioDao {
                  return true;
                 }
             }
-            connection.close();
+//            connection.close();
+            
         } catch (Exception e) {
             System.err.println("Got an exception! ");
             System.err.println(e.getMessage());
         }
         return false;
+        
+        
     }
 }

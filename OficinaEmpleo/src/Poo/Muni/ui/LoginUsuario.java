@@ -26,7 +26,9 @@ public class LoginUsuario extends javax.swing.JFrame {
         this.gestor = gestor;
     }
 
-    
+
+
+
    
 
     /**
@@ -195,7 +197,7 @@ public class LoginUsuario extends javax.swing.JFrame {
  String nombreUsuario = txtUsuario.getText();   
  String contraseña = txtcontraseña.getText();
  
- gestor.Login(nombreUsuario,contraseña);
+
     
  if(nombreUsuario.contains(" ")){
      JOptionPane.showMessageDialog(null,"Error no deje ningun campo vacio","Error",JOptionPane.ERROR_MESSAGE);
@@ -209,18 +211,21 @@ public class LoginUsuario extends javax.swing.JFrame {
     
  }else{
      JOptionPane.showMessageDialog(null,"La contraseña o el usuario no son correctos","Error",JOptionPane.ERROR_MESSAGE);
+     return;
  }
     
 }
     private void RegistrarseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RegistrarseActionPerformed
         // TODO add your handling code here:
-     new poo.muni.ui.AltaUsuario(gestor).setVisible(true);
-     dispose();
-
-     
+      registrar();
      
     }//GEN-LAST:event_RegistrarseActionPerformed
 
+    public void registrar(){
+       new poo.muni.ui.AltaUsuario(gestor).setVisible(true);
+     dispose();  
+    }
+    
     private void ContraseñaOlvidadaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ContraseñaOlvidadaMouseClicked
         // TODO add your handling code here:
     }//GEN-LAST:event_ContraseñaOlvidadaMouseClicked

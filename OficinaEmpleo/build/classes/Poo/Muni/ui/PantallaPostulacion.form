@@ -134,12 +134,17 @@
                           <EmptySpace pref="27" max="32767" attributes="0"/>
                           <Component id="Cancelar" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <Component id="txtTelAlt" min="-2" pref="157" max="-2" attributes="0"/>
-                      <Component id="txtDip_Horarios" min="-2" pref="157" max="-2" attributes="0"/>
-                      <Component id="txtDomicilio" alignment="0" min="-2" pref="157" max="-2" attributes="0"/>
-                      <Component id="txtPrograma" alignment="0" min="-2" pref="157" max="-2" attributes="0"/>
-                      <Component id="txtEdad" alignment="0" min="-2" pref="157" max="-2" attributes="0"/>
-                      <Component id="txtDNI" min="-2" pref="157" max="-2" attributes="0"/>
+                      <Group type="102" attributes="0">
+                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                              <Component id="txtTelAlt" max="32767" attributes="0"/>
+                              <Component id="txtDip_Horarios" max="32767" attributes="0"/>
+                              <Component id="txtDomicilio" alignment="0" max="32767" attributes="0"/>
+                              <Component id="txtPrograma" alignment="0" max="32767" attributes="0"/>
+                              <Component id="txtEdad" alignment="0" max="32767" attributes="0"/>
+                              <Component id="txtDNI" alignment="0" pref="157" max="32767" attributes="0"/>
+                          </Group>
+                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                      </Group>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
               </Group>
@@ -320,8 +325,6 @@
         </Component>
         <Component class="javax.swing.JTextField" name="txtDip_Horarios">
         </Component>
-        <Component class="javax.swing.JTextField" name="txtDNI">
-        </Component>
         <Component class="javax.swing.JButton" name="Agregar">
           <Properties>
             <Property name="text" type="java.lang.String" value="Agregar"/>
@@ -346,6 +349,11 @@
           <Properties>
             <Property name="text" type="java.lang.String" value="Femenino"/>
           </Properties>
+        </Component>
+        <Component class="javax.swing.JFormattedTextField" name="txtDNI">
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtDNIActionPerformed"/>
+          </Events>
         </Component>
       </SubComponents>
     </Container>
