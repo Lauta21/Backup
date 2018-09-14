@@ -14,8 +14,10 @@ tamaño int,
 primary key(id_Foto),
 foreign key(id_Album) references Album(id_Album));
 
-insert into Album(nombre,cantidadMaxima,fechaCreacion) values("foto2",2,12/12/2012);
+insert into foto(id_Album,descripcion,nombreArchivo,tamaño) values(4,"Cordoba","null",2042);
 
-select * from Album
+select * from Foto
 
 select f.nombreArchivo,f.tamaño,a.nombre from Album as a inner join Foto as f on a.id_Album = f.id_Foto
+where f.tamaño >= 1024
+order by tamaño descpedido
