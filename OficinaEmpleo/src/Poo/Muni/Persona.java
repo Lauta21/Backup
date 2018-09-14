@@ -6,24 +6,50 @@
 package Poo.Muni;
 
 import java.util.Date;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
 /**
  *
  * @author Capacitacion3
  */
+@Entity
+@Table(name = "Persona")
 public abstract class Persona {
+    @Id
+    @GeneratedValue
+    @Column(name = "id_persona")
+    private String id_persona;
+    @Column(name = "Nombre")
      private String nombre;
+    @Column(name = "Apellido")
      private String apellido;
+    @Column(name = "DNI")
      private Integer DNI;
+    @Column(name = "Cuil_Cuit")
      private String cuil_Cuit;
+    @Column(name = "Sexo")
      private String sexo;
+    @Column(name = "Direccion")
      private String direccion;
+    @Column(name = "Distrito")
      private String distrito;
+    @Column(name = "TelPrincipal")
      private int telPrincipal;
+    @Column(name = "TelAlternativo")
      private int telAlternativo;
+    @Column(name = "FechaNacimiento")
      private Date fechadeNacimiento;
+    @Column(name = "Email")
      private String email;
+    @Column(name = "Edad")
      private int edad;
+
+    public Persona() {
+    }
      
      public void Personas(){
          
@@ -48,7 +74,13 @@ public abstract class Persona {
     }
     public void eliminarPerosna(){         
     }
-
+    
+    public String getId_persona() {
+        return id_persona;
+    }
+    public void setId_persona(String id_persona) {
+        this.id_persona = id_persona;
+    }
     public String getNombre() {
         return nombre;
     }
@@ -120,6 +152,5 @@ public abstract class Persona {
     }
     public void setEdad(int edad) {
         this.edad = edad;
-    }
-     
+    }     
 }
