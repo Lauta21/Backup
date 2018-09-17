@@ -26,11 +26,6 @@ public class LoginUsuario extends javax.swing.JFrame {
         this.gestor = gestor;
     }
 
-
-
-
-   
-
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -48,7 +43,7 @@ public class LoginUsuario extends javax.swing.JFrame {
         Registrarse = new javax.swing.JButton();
         ContraseñaOlvidada = new javax.swing.JLabel();
         txtcontraseña = new javax.swing.JPasswordField();
-        jButton1 = new javax.swing.JButton();
+        Salis = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -96,14 +91,14 @@ public class LoginUsuario extends javax.swing.JFrame {
             }
         });
 
-        jButton1.setBackground(new java.awt.Color(204, 204, 204));
-        jButton1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(102, 102, 102));
-        jButton1.setText("Salir");
-        jButton1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        Salis.setBackground(new java.awt.Color(204, 204, 204));
+        Salis.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        Salis.setForeground(new java.awt.Color(102, 102, 102));
+        Salis.setText("Salir");
+        Salis.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        Salis.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                SalisActionPerformed(evt);
             }
         });
 
@@ -130,7 +125,7 @@ public class LoginUsuario extends javax.swing.JFrame {
                         .addComponent(ContraseñaOlvidada))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(227, 227, 227)
-                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(Salis, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(151, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -151,7 +146,7 @@ public class LoginUsuario extends javax.swing.JFrame {
                 .addGap(27, 27, 27)
                 .addComponent(ContraseñaOlvidada)
                 .addGap(26, 26, 26)
-                .addComponent(jButton1)
+                .addComponent(Salis)
                 .addGap(22, 22, 22))
         );
 
@@ -205,7 +200,7 @@ public class LoginUsuario extends javax.swing.JFrame {
     }
 
  if(gestor.Login(nombreUsuario,contraseña)){
-    JOptionPane.showMessageDialog(null,"A iniciado sesion exitosamente","Informacion",JOptionPane.INFORMATION_MESSAGE);
+    JOptionPane.showMessageDialog(null,"Inicio sesion exitosamente","Informacion",JOptionPane.INFORMATION_MESSAGE);
     new Poo.Muni.ui.PantallaPrincipal(gestor, nombreUsuario).setVisible(true);
     dispose();
     
@@ -230,11 +225,11 @@ public class LoginUsuario extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_ContraseñaOlvidadaMouseClicked
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void SalisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SalisActionPerformed
         // TODO add your handling code here:
         dispose();
         
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_SalisActionPerformed
 
 //    /**
 //     * @param args the command line arguments
@@ -276,8 +271,8 @@ public class LoginUsuario extends javax.swing.JFrame {
     private javax.swing.JLabel ContraseñaOlvidada;
     private javax.swing.JButton Login;
     private javax.swing.JButton Registrarse;
+    private javax.swing.JButton Salis;
     private javax.swing.JLabel Usuario;
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JTextField txtUsuario;

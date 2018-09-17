@@ -27,15 +27,15 @@ public class PantallaPrincipal extends javax.swing.JFrame {
        txtshowUsuario.setText(nombreUsuario);       
     }
     
-    public void keyTyped(KeyEvent e) {
-    char c = e.getKeyChar();
-    if (!(Character.isDigit(c) ||
-    (c == KeyEvent.VK_BACK_SPACE) ||
-    (c == KeyEvent.VK_DELETE))) {
-    getToolkit().beep();
-    e.consume();
-        }
-    }
+//    public void keyTyped(KeyEvent e) {
+//    char c = e.getKeyChar();
+//    if (!(Character.isDigit(c) ||
+//    (c == KeyEvent.VK_BACK_SPACE) ||
+//    (c == KeyEvent.VK_DELETE))) {
+//    getToolkit().beep();
+//    e.consume();
+//        }
+//    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -84,6 +84,11 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         txtLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Poo/Muni/ui/logo2.png"))); // NOI18N
 
         jMenu2.setText("Menu");
+        jMenu2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenu2ActionPerformed(evt);
+            }
+        });
 
         menPostularme.setText("Postularme");
         menPostularme.addActionListener(new java.awt.event.ActionListener() {
@@ -153,12 +158,16 @@ public class PantallaPrincipal extends javax.swing.JFrame {
 
     private void menPostularmeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menPostularmeActionPerformed
         // TODO add your handling code here:
-        new Poo.Muni.ui.PantallaPostulacion().setVisible(true);
+        new PantallaPostulacion(gestor).setVisible(true);
     }//GEN-LAST:event_menPostularmeActionPerformed
 
     private void menEmpresaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menEmpresaActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_menEmpresaActionPerformed
+
+    private void jMenu2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenu2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jMenu2ActionPerformed
 
 //    /**
 //     * @param args the command line arguments
