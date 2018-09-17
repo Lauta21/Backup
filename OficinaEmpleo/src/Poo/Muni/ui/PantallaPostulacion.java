@@ -6,7 +6,7 @@
 package Poo.Muni.ui;
 
 import Poo.Muni.Controler.GestorOficinaEmpleo;
-import java.awt.event.KeyEvent;
+import javax.swing.ButtonModel;
 
 /**
  *
@@ -60,7 +60,7 @@ private String nombreUsuario;
         jRadioButton1 = new javax.swing.JRadioButton();
         Femenino = new javax.swing.JRadioButton();
         txtDispDeHorarios = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
+        Agergar = new javax.swing.JButton();
         Cancelar = new javax.swing.JButton();
         jLabel10 = new javax.swing.JLabel();
         jRadioButton2 = new javax.swing.JRadioButton();
@@ -145,7 +145,12 @@ private String nombreUsuario;
         Femenino.setForeground(new java.awt.Color(204, 204, 0));
         Femenino.setText("Femenino");
 
-        jButton1.setText("Agregar");
+        Agergar.setText("Agregar");
+        Agergar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                AgergarActionPerformed(evt);
+            }
+        });
 
         Cancelar.setText("Cancelar");
         Cancelar.addActionListener(new java.awt.event.ActionListener() {
@@ -199,18 +204,23 @@ private String nombreUsuario;
                     .addComponent(txtApellido)
                     .addComponent(txtNombre)
                     .addComponent(txtDNI))
-                .addGap(57, 57, 57)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel9)
-                    .addComponent(jLabel12)
-                    .addComponent(jLabel7)
-                    .addComponent(jLabel8)
-                    .addComponent(jLabel13)
-                    .addComponent(jLabel10))
-                .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jButton1)
+                        .addGap(57, 57, 57)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel9)
+                            .addComponent(jLabel7)
+                            .addComponent(jLabel8)
+                            .addComponent(jLabel13)
+                            .addComponent(jLabel10)))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(45, 45, 45)
+                        .addComponent(jLabel12)))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(txtDispDeHorarios, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(Agergar)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(Cancelar))
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
@@ -221,8 +231,7 @@ private String nombreUsuario;
                         .addComponent(txtCuit_Cuil, javax.swing.GroupLayout.Alignment.LEADING)
                         .addComponent(TelPricipal, javax.swing.GroupLayout.Alignment.LEADING)
                         .addComponent(jComboBox1, javax.swing.GroupLayout.Alignment.LEADING, 0, 151, Short.MAX_VALUE)
-                        .addComponent(jComboBox2, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(txtDispDeHorarios, javax.swing.GroupLayout.Alignment.LEADING)))
+                        .addComponent(jComboBox2, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addContainerGap(59, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -274,7 +283,7 @@ private String nombreUsuario;
                     .addComponent(Femenino))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 40, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1)
+                    .addComponent(Agergar)
                     .addComponent(Cancelar))
                 .addContainerGap())
         );
@@ -283,17 +292,17 @@ private String nombreUsuario;
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(25, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(33, 33, 33)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(47, 47, 47))
+                .addContainerGap(39, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(19, Short.MAX_VALUE)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(19, Short.MAX_VALUE))
+                .addContainerGap())
         );
 
         pack();
@@ -328,7 +337,28 @@ private String nombreUsuario;
         // TODO add your handling code here:
         soloNumero(evt);
     }//GEN-LAST:event_txtCuit_CuilKeyTyped
-public void soloNumero(java.awt.event.KeyEvent evt){
+
+    private void AgergarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AgergarActionPerformed
+        // TODO add your handling code here:
+        agregarPostulante();
+    }//GEN-LAST:event_AgergarActionPerformed
+
+    public void agregarPostulante(){
+        String nombre = txtNombre.getText();
+        String apellido = txtApellido.getText();
+        String dni = txtDNI.getText();
+        String edad = txtEdad.getText();
+        String direccion = txtDireccion.getText();
+        String distrito = txtDistrito.getText();
+        String cuil_ciut = txtCuit_Cuil.getText();
+        String telprincipal = TelPricipal.getText();
+        String diphorarios = txtDispDeHorarios.getText();
+        ButtonModel movilidad = Movilidad.getSelection();
+        ButtonModel sexo = Sexo.getSelection();
+        
+    }
+    
+    public void soloNumero(java.awt.event.KeyEvent evt){
     char soloNumero = evt.getKeyChar();
     
     if(Character.isLetter(soloNumero)){
@@ -374,12 +404,12 @@ public void soloNumero(java.awt.event.KeyEvent evt){
 //    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton Agergar;
     private javax.swing.JButton Cancelar;
     private javax.swing.JRadioButton Femenino;
     private javax.swing.ButtonGroup Movilidad;
     private javax.swing.ButtonGroup Sexo;
     private javax.swing.JTextField TelPricipal;
-    private javax.swing.JButton jButton1;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JComboBox<String> jComboBox2;
     private javax.swing.JLabel jLabel1;

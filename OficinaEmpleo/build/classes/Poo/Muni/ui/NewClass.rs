@@ -1,1 +1,0 @@
-Poo.Muni.ui.NewClass

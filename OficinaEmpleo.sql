@@ -65,6 +65,8 @@ Descripcion nvarchar(20000),
 primary key(id_nivel_educacion),
 foreign key(id_usuario) references Usuario(id_usuario));
 
+insert into NivelEducacion(id_nivel_educacion,nombre,descripcion)values(4,"Universitario","Universitario");
+
 create table Perfil(
 id_perfil int not null auto_increment,
 id_usuario int not null,
@@ -103,6 +105,6 @@ foreign key(id_usuario) references Usuario(id_usuario));
 alter table Usuario
 CHANGE FechaSesion fecha date
 
-select * from Usuario
+select * from niveleducacion
 
  
