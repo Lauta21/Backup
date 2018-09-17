@@ -5,10 +5,22 @@
  */
 package Poo.Muni.Dao;
 
+import java.sql.Connection;
+import org.hibernate.SessionFactory;
+
 /**
  *
  * @author Capacitacion3
  */
 public class PostulanteDao {
+    private final SessionFactory sessionFactory;
+    private final Connection connection;
+
+    public PostulanteDao(SessionFactory sessionFactory, Connection connection) {
+        this.sessionFactory = sessionFactory;
+        this.connection = connection;
+    }
+
+
     
 }
