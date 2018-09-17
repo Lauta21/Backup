@@ -27,15 +27,7 @@ public class PantallaPrincipal extends javax.swing.JFrame {
        txtshowUsuario.setText(nombreUsuario);       
     }
     
-//    public void keyTyped(KeyEvent e) {
-//    char c = e.getKeyChar();
-//    if (!(Character.isDigit(c) ||
-//    (c == KeyEvent.VK_BACK_SPACE) ||
-//    (c == KeyEvent.VK_DELETE))) {
-//    getToolkit().beep();
-//    e.consume();
-//        }
-//    }
+
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -159,6 +151,7 @@ public class PantallaPrincipal extends javax.swing.JFrame {
     private void menPostularmeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menPostularmeActionPerformed
         // TODO add your handling code here:
         new PantallaPostulacion(gestor).setVisible(true);
+        dispose();
     }//GEN-LAST:event_menPostularmeActionPerformed
 
     private void menEmpresaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menEmpresaActionPerformed
