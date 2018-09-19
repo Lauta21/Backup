@@ -7,8 +7,11 @@ package Poo.Muni.ui;
 
 import Poo.Muni.Controler.GestorOficinaEmpleo;
 import Poo.Muni.NivelEducacion;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 import javax.swing.ButtonModel;
 import javax.swing.JComboBox;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -358,14 +361,35 @@ private String nombreUsuario;
         String edad = txtEdad.getText();
         String direccion = txtDireccion.getText();
         String distrito = txtDistrito.getText();
-        String cuil_ciut = txtCuit_Cuil.getText();
+        String cuil_cuit = txtCuit_Cuil.getText();
         String telprincipal = TelPricipal.getText();
         String diphorarios = txtDispDeHorarios.getText();
         String email = txtEmail.getText().replaceAll(" ","");
         ButtonModel movilidad = Movilidad.getSelection();
         ButtonModel sexo = Sexo.getSelection();
+     
+        if(nombre.isEmpty() || apellido.isEmpty() || dni.isEmpty() || edad.isEmpty() || direccion.isEmpty() || distrito.isEmpty() || cuil_cuit.isEmpty() || telprincipal.isEmpty() || diphorarios.isEmpty() || email.isEmpty()){            
+            JOptionPane.showMessageDialog(null,"Error no deje ningun campo vacio","Error",JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+        if(!ValidarEmail(email)){
+        JOptionPane.showMessageDialog(txtEmail,"Error el correo no es valido","Error",JOptionPane.ERROR_MESSAGE);
+        }
         
-    }
+        gestor.GuardarPostulante(nombre, apellido, dni, cuil_cuit, edad, direccion, distrito, telprincipal, telprincipal, null, email, edad);
+    }    
+
+   
+    public boolean ValidarEmail(String email){
+        String regex =("^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@"
+                        + "[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$");
+        Pattern pattern = Pattern.compile(regex);
+        Matcher matcher = pattern.matcher(email);
+         
+        return matcher.matches();  
+    }   
+        
+    
     
     public void soloNumero(java.awt.event.KeyEvent evt){
     char soloNumero = evt.getKeyChar();

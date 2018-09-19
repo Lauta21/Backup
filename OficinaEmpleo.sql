@@ -12,16 +12,16 @@ id_abstracpersona int not null auto_increment,
 id_usuario int not null,
 Nombre nvarchar(50),
 Apellido nvarchar(50),
-DNI integer(50),
-Cuil_Ciut integer(50),
+DNI nvarchar(50),
+Cuil_Ciut nvarchar(50),
 Sexo nvarchar(50),
 Director nvarchar(50),
 Distrito nvarchar(50),
-TelPrincipal int(50),
-TelAlternativo int(50),
+TelPrincipal nvarchar(50),
+TelAlternativo nvarchar(50),
 Fecha_de_Nacimiento date,
 Email nvarchar(50),
-Edad int(50),
+Edad nvarchar(50),
 primary key(id_abstracpersona),
 foreign key(id_usuario) references Usuario(id_usuario));
 
@@ -102,9 +102,9 @@ foreign key(id_postulante) references Postulante(id_postulante),
 foreign key(id_abstracpersona) references AbstractPersona(id_abstracpersona),
 foreign key(id_usuario) references Usuario(id_usuario));
 
-alter table Usuario
-CHANGE FechaSesion fecha date
+alter table AbstractPersona
+CHANGE Edad Edad nvarchar(50)
 
-select * from niveleducacion
+select * from AbstractPersona
 
  

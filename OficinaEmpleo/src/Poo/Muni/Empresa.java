@@ -7,6 +7,7 @@ package Poo.Muni;
 
 import java.util.Date;
 
+
 /**
  *
  * @author Capacitacion3
@@ -21,10 +22,10 @@ public class Empresa extends Persona{
     private String tipoContacto;
 
     public Empresa() {
-        super(null, null, null, null, null, null, null, 0, 0, null, null, 0);
+        super();
     }
 
-    public Empresa(TipoActividad tipoActividad, String razonSocial, String representanteLegal, String sede, int cantidadTrabajadores, Date fechaContacto, String tipoContacto, String nombre, String apellido, Integer DNI, String cuil_Cuit, String sexo, String direccion, String distrito, int telPrincipal, int telAlternativo, Date fechadeNacimiento, String email, int edad) {
+    public Empresa(TipoActividad tipoActividad, String razonSocial, String representanteLegal, String sede, int cantidadTrabajadores, Date fechaContacto, String tipoContacto, String nombre, String apellido, String DNI, String cuil_Cuit, String sexo, String direccion, String distrito, String telPrincipal, String telAlternativo, Date fechadeNacimiento, String email, String edad) {
         super(nombre, apellido, DNI, cuil_Cuit, sexo, direccion, distrito, telPrincipal, telAlternativo, fechadeNacimiento, email, edad);
         this.tipoActividad = tipoActividad;
         this.razonSocial = razonSocial;
@@ -34,7 +35,7 @@ public class Empresa extends Persona{
         this.fechaContacto = fechaContacto;
         this.tipoContacto = tipoContacto;
     }
-    public Empresa(String nombre, String apellido, Integer DNI, String cuil_Cuit, String sexo, String direccion, String distrito, int telPrincipal, int telAlternativo, Date fechadeNacimiento, String email, int edad) {
+    public Empresa(String nombre, String apellido, String DNI, String cuil_Cuit, String sexo, String direccion, String distrito, String telPrincipal, String telAlternativo, Date fechadeNacimiento, String email, String edad) {
         super(nombre, apellido, DNI, cuil_Cuit, sexo, direccion, distrito, telPrincipal, telAlternativo, fechadeNacimiento, email, edad);
     }
     public TipoActividad getTipoActividad() {

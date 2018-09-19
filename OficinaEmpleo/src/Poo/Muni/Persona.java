@@ -28,7 +28,7 @@ public abstract class Persona {
     @Column(name = "Apellido")
      private String apellido;
     @Column(name = "DNI")
-     private Integer DNI;
+     private String DNI;
     @Column(name = "Cuil_Cuit")
      private String cuil_Cuit;
     @Column(name = "Sexo")
@@ -38,15 +38,15 @@ public abstract class Persona {
     @Column(name = "Distrito")
      private String distrito;
     @Column(name = "TelPrincipal")
-     private int telPrincipal;
+     private String telPrincipal;
     @Column(name = "TelAlternativo")
-     private int telAlternativo;
+     private String telAlternativo;
     @Column(name = "FechaNacimiento")
-     private Date fechadeNacimiento;
+      Date fechadeNacimiento;
     @Column(name = "Email")
      private String email;
     @Column(name = "Edad")
-     private int edad;
+     private String edad;
 
     public Persona() {
     }
@@ -54,7 +54,7 @@ public abstract class Persona {
     public void Personas(){
     }
     
-    public Persona(String nombre, String apellido, Integer DNI, String cuil_Cuit, String sexo, String direccion, String distrito, int telPrincipal, int telAlternativo, Date fechadeNacimiento, String email, int edad) {
+    public Persona(String nombre, String apellido, String DNI, String cuil_Cuit, String sexo, String direccion, String distrito, String telPrincipal, String telAlternativo, Date fechadeNacimiento, String email, String edad) {
         this.nombre = nombre;
         this.apellido = apellido;
         this.DNI = DNI;
@@ -93,10 +93,10 @@ public abstract class Persona {
     public void setApellido(String apellido) {
         this.apellido = apellido;
     }
-    public Integer getDNI() {
+    public String getDNI() {
         return DNI;
     }
-    public void setDNI(Integer DNI) {
+    public void setDNI(String DNI) {
         this.DNI = DNI;
     }
     public String getCuil_Cuit() {
@@ -123,16 +123,16 @@ public abstract class Persona {
     public void setDistrito(String distrito) {
         this.distrito = distrito;
     }
-    public int getTelPrincipal() {
+    public String getTelPrincipal() {
         return telPrincipal;
     }
-    public void setTelPrincipal(int telPrincipal) {
+    public void setTelPrincipal(String telPrincipal) {
         this.telPrincipal = telPrincipal;
     }
-    public int getTelAlternativo() {
+    public String getTelAlternativo() {
         return telAlternativo;
     }
-    public void setTelAlternativo(int telAlternativo) {
+    public void setTelAlternativo(String telAlternativo) {
         this.telAlternativo = telAlternativo;
     }
     public Date getFechadeNacimiento() {
@@ -147,10 +147,10 @@ public abstract class Persona {
     public void setEmail(String email) {
         this.email = email;
     }
-    public int getEdad() {
+    public String getEdad() {
         return edad;
     }
-    public void setEdad(int edad) {
+    public void setEdad(String edad) {
         this.edad = edad;
     }     
 }

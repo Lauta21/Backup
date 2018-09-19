@@ -5,10 +5,13 @@
  */
 package Poo.Muni.Controler;
 
+import Poo.Muni.Dao.PostulanteDao;
 import Poo.Muni.Dao.UsuarioDao;
+import Poo.Muni.Postulante;
 import Poo.Muni.Usuario;
 import Poo.Muni.ui.LoginUsuario;
 import java.sql.Connection;
+import java.util.Date;
 import org.hibernate.SessionFactory;
 
 /**
@@ -18,12 +21,14 @@ import org.hibernate.SessionFactory;
 public class GestorOficinaEmpleo {
      
     private final UsuarioDao usuarioDao;
+    private final PostulanteDao postulanteDao;
     public GestorOficinaEmpleo(SessionFactory sessionFactory,Connection connection){
         this.usuarioDao = new UsuarioDao(sessionFactory,connection);
+        this.postulanteDao = new PostulanteDao(sessionFactory, connection);
+    } 
       
-       
         
-    }
+    
     public void run(){
         new LoginUsuario(this).setVisible(true);
 
@@ -31,8 +36,12 @@ public class GestorOficinaEmpleo {
     
     public void GuardarUsuario(String nombre,String apellido,String contraseña,String nombreUsuario,String mail){
         Usuario usuario = new Usuario(nombre,apellido,contraseña,nombreUsuario,mail);
-        usuarioDao.GuardarUsuario(usuario);
-        
+        usuarioDao.GuardarUsuario(usuario);    
+    }
+    
+    public void GuardarPostulante(String nombre,String apellido,String dni,String cuil_Cuit,String sexo,String direccion,String distrito,String telPrincipal,String telAlternativo,Date fechadeNacimiento,String email,String edad){
+        Postulante postulante = new Postulante(nombre, apellido,dni, cuil_Cuit, sexo, direccion, distrito,telPrincipal, telAlternativo, fechadeNacimiento, email, edad);
+        postulanteDao.GuardarPostulante(postulante);
     }
     
     public boolean isUsuarioExistente(String nombreUsuario){

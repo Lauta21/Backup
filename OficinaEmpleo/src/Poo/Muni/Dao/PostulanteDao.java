@@ -5,8 +5,12 @@
  */
 package Poo.Muni.Dao;
 
+import Poo.Muni.Postulante;
 import java.sql.Connection;
+import org.hibernate.HibernateException;
+import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
 
 /**
  *
@@ -19,6 +23,24 @@ public class PostulanteDao {
     public PostulanteDao(SessionFactory sessionFactory, Connection connection) {
         this.sessionFactory = sessionFactory;
         this.connection = connection;
+    }
+    
+    public void GuardarPostulante(Postulante postulante){
+        Session session = sessionFactory.openSession();
+        Transaction tx = null;
+        
+        try {
+            tx = session.beginTransaction();
+            session.save(postulante);
+            tx.commit();
+            
+        } catch (HibernateException e) {
+            if(tx!=null) tx.rollback();
+            e.printStackTrace();
+        }
+        finally{
+            session.close();
+        }
     }
 
 

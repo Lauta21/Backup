@@ -23,9 +23,8 @@ public class AltaUsuario extends javax.swing.JFrame {
      * @param gestor
      */
     public AltaUsuario(GestorOficinaEmpleo gestor) {
-        
-        this.gestor = gestor;
         initComponents();
+        this.gestor = gestor;
        
     }
 
