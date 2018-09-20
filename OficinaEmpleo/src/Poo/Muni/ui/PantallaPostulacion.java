@@ -6,11 +6,10 @@
 package Poo.Muni.ui;
 
 import Poo.Muni.Controler.GestorOficinaEmpleo;
-import Poo.Muni.NivelEducacion;
+import java.util.Date;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import javax.swing.ButtonModel;
-import javax.swing.JComboBox;
 import javax.swing.JOptionPane;
 
 /**
@@ -59,7 +58,7 @@ private String nombreUsuario;
         jLabel12 = new javax.swing.JLabel();
         boxNivelEducativo = new javax.swing.JComboBox<>();
         txtCuit_Cuil = new javax.swing.JTextField();
-        TelPricipal = new javax.swing.JTextField();
+        txtTelPricipal = new javax.swing.JTextField();
         jLabel13 = new javax.swing.JLabel();
         boxPrograma = new javax.swing.JComboBox<>();
         jRadioButton1 = new javax.swing.JRadioButton();
@@ -73,6 +72,10 @@ private String nombreUsuario;
         txtDNI = new javax.swing.JTextField();
         jLabel14 = new javax.swing.JLabel();
         txtEmail = new javax.swing.JTextField();
+        txtTelAlternativo = new javax.swing.JTextField();
+        jLabel15 = new javax.swing.JLabel();
+        jLabel16 = new javax.swing.JLabel();
+        txtFechaDeNacimiento = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -133,9 +136,9 @@ private String nombreUsuario;
             }
         });
 
-        TelPricipal.addKeyListener(new java.awt.event.KeyAdapter() {
+        txtTelPricipal.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
-                TelPricipalKeyTyped(evt);
+                txtTelPricipalKeyTyped(evt);
             }
         });
 
@@ -188,41 +191,55 @@ private String nombreUsuario;
         jLabel14.setForeground(new java.awt.Color(204, 204, 0));
         jLabel14.setText("Email");
 
+        jLabel15.setForeground(new java.awt.Color(204, 204, 0));
+        jLabel15.setText("TelAlternativo");
+
+        jLabel16.setForeground(new java.awt.Color(204, 204, 0));
+        jLabel16.setText("Fecha de nacimineto");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(32, 32, 32)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel2)
-                    .addComponent(jLabel3)
-                    .addComponent(jLabel4)
-                    .addComponent(jLabel5)
-                    .addComponent(jLabel6)
-                    .addComponent(jLabel1)
-                    .addComponent(jLabel11))
-                .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jRadioButton1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 9, Short.MAX_VALUE)
-                        .addComponent(Femenino))
-                    .addComponent(txtDistrito)
-                    .addComponent(txtDireccion)
-                    .addComponent(txtEdad)
-                    .addComponent(txtApellido)
-                    .addComponent(txtNombre)
-                    .addComponent(txtDNI))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel2)
+                            .addComponent(jLabel3)
+                            .addComponent(jLabel4)
+                            .addComponent(jLabel5)
+                            .addComponent(jLabel6)
+                            .addComponent(jLabel1)
+                            .addComponent(jLabel11))
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(jRadioButton1)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 9, Short.MAX_VALUE)
+                                .addComponent(Femenino))
+                            .addComponent(txtDistrito)
+                            .addComponent(txtDireccion)
+                            .addComponent(txtEdad)
+                            .addComponent(txtApellido)
+                            .addComponent(txtNombre)
+                            .addComponent(txtDNI)))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabel16)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(txtFechaDeNacimiento)))
                 .addGap(57, 57, 57)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel9)
-                    .addComponent(jLabel7)
-                    .addComponent(jLabel8)
-                    .addComponent(jLabel13)
-                    .addComponent(jLabel10)
-                    .addComponent(jLabel12)
-                    .addComponent(jLabel14))
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(jLabel7)
+                        .addComponent(jLabel8)
+                        .addComponent(jLabel13)
+                        .addComponent(jLabel10)
+                        .addComponent(jLabel14)
+                        .addComponent(jLabel9, javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addComponent(jLabel12))
+                    .addComponent(jLabel15))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
@@ -230,17 +247,18 @@ private String nombreUsuario;
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(Cancelar))
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
-                            .addComponent(jRadioButton2)
-                            .addGap(18, 18, 18)
-                            .addComponent(jRadioButton3))
-                        .addComponent(txtCuit_Cuil, javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(TelPricipal, javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(boxNivelEducativo, javax.swing.GroupLayout.Alignment.LEADING, 0, 151, Short.MAX_VALUE)
-                        .addComponent(boxPrograma, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                         .addComponent(txtEmail, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 151, Short.MAX_VALUE)
-                        .addComponent(txtDispDeHorarios, javax.swing.GroupLayout.Alignment.LEADING)))
+                        .addComponent(txtDispDeHorarios, javax.swing.GroupLayout.Alignment.LEADING))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jRadioButton2)
+                        .addGap(18, 18, 18)
+                        .addComponent(jRadioButton3))
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addComponent(txtTelAlternativo, javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(txtCuit_Cuil, javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(txtTelPricipal, javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(boxNivelEducativo, javax.swing.GroupLayout.Alignment.LEADING, 0, 151, Short.MAX_VALUE)
+                        .addComponent(boxPrograma, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addContainerGap(59, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -257,42 +275,50 @@ private String nombreUsuario;
                     .addComponent(jLabel2)
                     .addComponent(txtApellido, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel8)
-                    .addComponent(TelPricipal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtTelPricipal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel9)
-                    .addComponent(boxNivelEducativo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel3)
-                    .addComponent(txtDNI, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel3)
+                            .addComponent(txtDNI, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(txtTelAlternativo, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabel15))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jLabel4)
                         .addComponent(txtEdad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jLabel13)
-                        .addComponent(boxPrograma, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(jLabel9)
+                        .addComponent(boxNivelEducativo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel5)
                     .addComponent(txtDireccion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel13)
+                    .addComponent(boxPrograma, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel6)
+                    .addComponent(txtDistrito, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel10)
                     .addComponent(jRadioButton2)
                     .addComponent(jRadioButton3))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel6)
-                    .addComponent(txtDistrito, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel12)
-                    .addComponent(txtDispDeHorarios, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel11)
                     .addComponent(jRadioButton1)
                     .addComponent(Femenino)
+                    .addComponent(txtDispDeHorarios, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel12))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel14)
-                    .addComponent(txtEmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 40, Short.MAX_VALUE)
+                    .addComponent(txtEmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel16)
+                    .addComponent(txtFechaDeNacimiento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 33, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(Agergar)
                     .addComponent(Cancelar))
@@ -306,12 +332,12 @@ private String nombreUsuario;
             .addGroup(layout.createSequentialGroup()
                 .addGap(33, 33, 33)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(39, Short.MAX_VALUE))
+                .addContainerGap(45, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(19, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
@@ -339,10 +365,10 @@ private String nombreUsuario;
         soloNumero(evt);
     }//GEN-LAST:event_txtEdadKeyTyped
 
-    private void TelPricipalKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TelPricipalKeyTyped
+    private void txtTelPricipalKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtTelPricipalKeyTyped
         // TODO add your handling code here:
         soloNumero(evt);
-    }//GEN-LAST:event_TelPricipalKeyTyped
+    }//GEN-LAST:event_txtTelPricipalKeyTyped
 
     private void txtCuit_CuilKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCuit_CuilKeyTyped
         // TODO add your handling code here:
@@ -362,7 +388,8 @@ private String nombreUsuario;
         String direccion = txtDireccion.getText();
         String distrito = txtDistrito.getText();
         String cuil_cuit = txtCuit_Cuil.getText();
-        String telprincipal = TelPricipal.getText();
+        String telprincipal = txtTelPricipal.getText();
+        String telalternativo = txtTelAlternativo.getText();
         String diphorarios = txtDispDeHorarios.getText();
         String email = txtEmail.getText().replaceAll(" ","");
         ButtonModel movilidad = Movilidad.getSelection();
@@ -374,12 +401,11 @@ private String nombreUsuario;
         }
         if(!ValidarEmail(email)){
         JOptionPane.showMessageDialog(txtEmail,"Error el correo no es valido","Error",JOptionPane.ERROR_MESSAGE);
+        return;
         }
         
-        gestor.GuardarPostulante(nombre, apellido, dni, cuil_cuit, edad, direccion, distrito, telprincipal, telprincipal, null, email, edad);
-    }    
-
-   
+        gestor.GuardarPostulante(nombre, apellido, dni, cuil_cuit, edad, direccion, distrito, telprincipal, telalternativo, null, email, edad);
+    }
     public boolean ValidarEmail(String email){
         String regex =("^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@"
                         + "[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$");
@@ -387,10 +413,7 @@ private String nombreUsuario;
         Matcher matcher = pattern.matcher(email);
          
         return matcher.matches();  
-    }   
-        
-    
-    
+    }
     public void soloNumero(java.awt.event.KeyEvent evt){
     char soloNumero = evt.getKeyChar();
     
@@ -442,7 +465,6 @@ private String nombreUsuario;
     private javax.swing.JRadioButton Femenino;
     private javax.swing.ButtonGroup Movilidad;
     private javax.swing.ButtonGroup Sexo;
-    private javax.swing.JTextField TelPricipal;
     private javax.swing.JComboBox<String> boxNivelEducativo;
     private javax.swing.JComboBox<String> boxPrograma;
     private javax.swing.JLabel jLabel1;
@@ -451,6 +473,8 @@ private String nombreUsuario;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -471,6 +495,9 @@ private String nombreUsuario;
     private javax.swing.JTextField txtDistrito;
     private javax.swing.JTextField txtEdad;
     private javax.swing.JTextField txtEmail;
+    private javax.swing.JTextField txtFechaDeNacimiento;
     private javax.swing.JTextField txtNombre;
+    private javax.swing.JTextField txtTelAlternativo;
+    private javax.swing.JTextField txtTelPricipal;
     // End of variables declaration//GEN-END:variables
 }
