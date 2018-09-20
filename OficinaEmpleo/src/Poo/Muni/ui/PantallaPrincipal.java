@@ -39,47 +39,40 @@ public class PantallaPrincipal extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        BotonCerrarSesion = new javax.swing.JButton();
-        jInternalFrame1 = new javax.swing.JInternalFrame();
-        txtshowUsuario = new javax.swing.JLabel();
+        jPanel1 = new javax.swing.JPanel();
         txtLogo = new javax.swing.JLabel();
+        txtshowUsuario = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
-        jMenu2 = new javax.swing.JMenu();
+        menDatos = new javax.swing.JMenu();
         menPostularme = new javax.swing.JMenuItem();
-        menEmpresa = new javax.swing.JMenuItem();
-        jMenuItem3 = new javax.swing.JMenuItem();
+        menCerrarSesion = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(102, 102, 102));
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        BotonCerrarSesion.setBackground(new java.awt.Color(102, 102, 102));
-        BotonCerrarSesion.setForeground(new java.awt.Color(204, 204, 0));
-        BotonCerrarSesion.setText("Cerrar Sesion");
-        BotonCerrarSesion.addActionListener(new java.awt.event.ActionListener() {
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        txtLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Poo/Muni/ui/1.png"))); // NOI18N
+        jPanel1.add(txtLogo, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 240, -1, -1));
+
+        txtshowUsuario.setForeground(new java.awt.Color(204, 204, 0));
+        jPanel1.add(txtshowUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 250, 48, 20));
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Poo/Muni/ui/2.png"))); // NOI18N
+        jLabel1.setText("jLabel1");
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 480, 270));
+
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 480, -1));
+
+        jMenuBar1.setBackground(new java.awt.Color(102, 102, 102));
+
+        menDatos.setForeground(new java.awt.Color(204, 204, 0));
+        menDatos.setText("Menu");
+        menDatos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BotonCerrarSesionActionPerformed(evt);
-            }
-        });
-
-        jInternalFrame1.setVisible(true);
-
-        javax.swing.GroupLayout jInternalFrame1Layout = new javax.swing.GroupLayout(jInternalFrame1.getContentPane());
-        jInternalFrame1.getContentPane().setLayout(jInternalFrame1Layout);
-        jInternalFrame1Layout.setHorizontalGroup(
-            jInternalFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
-        );
-        jInternalFrame1Layout.setVerticalGroup(
-            jInternalFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
-        );
-
-        txtLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Poo/Muni/ui/logo2.png"))); // NOI18N
-
-        jMenu2.setText("Menu");
-        jMenu2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenu2ActionPerformed(evt);
+                menDatosActionPerformed(evt);
             }
         });
 
@@ -89,65 +82,23 @@ public class PantallaPrincipal extends javax.swing.JFrame {
                 menPostularmeActionPerformed(evt);
             }
         });
-        jMenu2.add(menPostularme);
+        menDatos.add(menPostularme);
 
-        menEmpresa.setText("Datos");
-        menEmpresa.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                menEmpresaActionPerformed(evt);
+        jMenuBar1.add(menDatos);
+
+        menCerrarSesion.setForeground(new java.awt.Color(204, 204, 0));
+        menCerrarSesion.setText("Cerrar Sesion");
+        menCerrarSesion.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                menCerrarSesionMouseClicked(evt);
             }
         });
-        jMenu2.add(menEmpresa);
-
-        jMenuItem3.setText("Ingresar Empresa");
-        jMenuItem3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem3ActionPerformed(evt);
-            }
-        });
-        jMenu2.add(jMenuItem3);
-
-        jMenuBar1.add(jMenu2);
+        jMenuBar1.add(menCerrarSesion);
 
         setJMenuBar(jMenuBar1);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(0, 331, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(BotonCerrarSesion, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(txtLogo)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txtshowUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE))))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(0, 150, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(txtLogo)
-                    .addComponent(txtshowUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(BotonCerrarSesion))
-        );
-
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void BotonCerrarSesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonCerrarSesionActionPerformed
-        // TODO add your handling code here:
-        dispose();
-        new Poo.Muni.ui.LoginUsuario(gestor).setVisible(true);
-       
-    }//GEN-LAST:event_BotonCerrarSesionActionPerformed
-
-    private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jMenuItem3ActionPerformed
 
     private void menPostularmeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menPostularmeActionPerformed
         // TODO add your handling code here:
@@ -155,13 +106,15 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         dispose();
     }//GEN-LAST:event_menPostularmeActionPerformed
 
-    private void menEmpresaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menEmpresaActionPerformed
+    private void menDatosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menDatosActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_menEmpresaActionPerformed
+    }//GEN-LAST:event_menDatosActionPerformed
 
-    private void jMenu2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenu2ActionPerformed
+    private void menCerrarSesionMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menCerrarSesionMouseClicked
         // TODO add your handling code here:
-    }//GEN-LAST:event_jMenu2ActionPerformed
+        dispose();
+        new Poo.Muni.ui.LoginUsuario(gestor).setVisible(true);
+    }//GEN-LAST:event_menCerrarSesionMouseClicked
 
 //    /**
 //     * @param args the command line arguments
@@ -199,12 +152,11 @@ public class PantallaPrincipal extends javax.swing.JFrame {
 //    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton BotonCerrarSesion;
-    private javax.swing.JInternalFrame jInternalFrame1;
-    private javax.swing.JMenu jMenu2;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JMenuItem jMenuItem3;
-    private javax.swing.JMenuItem menEmpresa;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JMenu menCerrarSesion;
+    private javax.swing.JMenu menDatos;
     private javax.swing.JMenuItem menPostularme;
     private javax.swing.JLabel txtLogo;
     private javax.swing.JLabel txtshowUsuario;
