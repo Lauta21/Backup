@@ -35,9 +35,7 @@ public class Empresa extends Persona{
         this.fechaContacto = fechaContacto;
         this.tipoContacto = tipoContacto;
     }
-    public Empresa(String nombre, String apellido, String DNI, String cuil_Cuit, String sexo, String direccion, String distrito, String telPrincipal, String telAlternativo, Date fechadeNacimiento, String email, String edad) {
-        super(nombre, apellido, DNI, cuil_Cuit, sexo, direccion, distrito, telPrincipal, telAlternativo, fechadeNacimiento, email, edad);
-    }
+   
     public TipoActividad getTipoActividad() {
         return tipoActividad;
     }

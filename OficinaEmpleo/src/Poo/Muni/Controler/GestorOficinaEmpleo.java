@@ -7,7 +7,10 @@ package Poo.Muni.Controler;
 
 import Poo.Muni.Dao.PostulanteDao;
 import Poo.Muni.Dao.UsuarioDao;
+import Poo.Muni.NivelEducacion;
+import Poo.Muni.Perfil;
 import Poo.Muni.Postulante;
+import Poo.Muni.Programa;
 import Poo.Muni.Usuario;
 import Poo.Muni.ui.LoginUsuario;
 import java.sql.Connection;
@@ -39,8 +42,8 @@ public class GestorOficinaEmpleo {
         usuarioDao.GuardarUsuario(usuario);    
     }
     
-    public void GuardarPostulante(String nombre,String apellido,String dni,String cuil_Cuit,String sexo,String direccion,String distrito,String telPrincipal,String telAlternativo,Date fechadeNacimiento,String email,String edad){
-        Postulante postulante = new Postulante(nombre, apellido,dni, cuil_Cuit, sexo, direccion, distrito,telPrincipal, telAlternativo, fechadeNacimiento, email, edad);
+    public void GuardarPostulante(NivelEducacion nivelEducacion,Perfil perfil, Programa programa,String nombre,String apellido,String dni,String cuil_Cuit,String sexo,String direccion,String distrito,String telPrincipal,String telAlternativo,Date fechadeNacimiento,String email,String edad){
+        Postulante postulante = new Postulante(nivelEducacion, perfil, programa, edad, distrito, direccion, nombre, apellido, dni, cuil_Cuit, sexo, direccion, distrito, telPrincipal, telAlternativo, fechadeNacimiento, email, edad);
         postulanteDao.GuardarPostulante(postulante);
     }
     

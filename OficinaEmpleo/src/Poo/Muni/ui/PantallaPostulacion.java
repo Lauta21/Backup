@@ -9,6 +9,7 @@ import Poo.Muni.Controler.GestorOficinaEmpleo;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import javax.swing.ButtonModel;
+import javax.swing.JComboBox;
 import javax.swing.JOptionPane;
 
 /**
@@ -407,7 +408,7 @@ private String nombreUsuario;
         return;
         }
         
-        gestor.GuardarPostulante(nombre, apellido, dni, cuil_cuit, edad, direccion, distrito, telprincipal, telalternativo, null, email, edad);
+        gestor.GuardarPostulante(null, null, null, nombre, apellido, dni, cuil_cuit, edad, direccion, distrito, telprincipal, telalternativo, null, email, edad);
     }
     public boolean ValidarEmail(String email){
         String regex =("^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@"
