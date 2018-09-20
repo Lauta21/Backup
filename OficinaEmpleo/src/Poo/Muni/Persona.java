@@ -50,9 +50,7 @@ public abstract class Persona {
 
     public Persona() {
     }
-     
-    public void Personas(){
-    }
+    
     
     public Persona(String nombre, String apellido, String DNI, String cuil_Cuit, String sexo, String direccion, String distrito, String telPrincipal, String telAlternativo, Date fechadeNacimiento, String email, String edad) {
         this.nombre = nombre;

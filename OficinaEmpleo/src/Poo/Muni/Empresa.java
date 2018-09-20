@@ -22,7 +22,7 @@ public class Empresa extends Persona{
     private String tipoContacto;
 
     public Empresa() {
-        super();
+     
     }
 
     public Empresa(TipoActividad tipoActividad, String razonSocial, String representanteLegal, String sede, int cantidadTrabajadores, Date fechaContacto, String tipoContacto, String nombre, String apellido, String DNI, String cuil_Cuit, String sexo, String direccion, String distrito, String telPrincipal, String telAlternativo, Date fechadeNacimiento, String email, String edad) {

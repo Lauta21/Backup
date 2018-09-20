@@ -14,14 +14,14 @@ public class AltaUsuario {
     private String Nombre;
     private String Apellido;
     private String NombreUsuario;
-    private char[] Contraseña;
-    private char[] CofirmarContraseña;
+    private String Contraseña;
+    private String CofirmarContraseña;
     private String Email;
 
     public AltaUsuario() {
     }
 
-    public AltaUsuario(String Nombre, String Apellido, String NombreUsuario, char[] Contraseña, char[] CofirmarContraseña, String Email) {
+    public AltaUsuario(String Nombre, String Apellido, String NombreUsuario, String Contraseña, String CofirmarContraseña, String Email) {
         this.Nombre = Nombre;
         this.Apellido = Apellido;
         this.NombreUsuario = NombreUsuario;
@@ -51,16 +51,16 @@ public class AltaUsuario {
     public void setNombreUsuario(String NombreUsuario) {
         this.NombreUsuario = NombreUsuario;
     }
-    public char[] getContraseña() {
+    public String getContraseña() {
         return Contraseña;
     }
-    public void setContraseña(char[] contraseña){
+    public void setContraseña(String contraseña){
         this.Contraseña = contraseña;
     }
-    public char[] getCofirmarContraseña() {
+    public String getCofirmarContraseña() {
         return CofirmarContraseña;
     }
-    public void setCofirmarContraseña(char[] CofirmarContraseña) {
+    public void setCofirmarContraseña(String CofirmarContraseña) {
         this.CofirmarContraseña = CofirmarContraseña;   
     }
     public String getEmail() {
