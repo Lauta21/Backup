@@ -6,7 +6,6 @@
 package Poo.Muni.ui;
 
 import Poo.Muni.Controler.GestorOficinaEmpleo;
-import java.awt.event.KeyEvent;
 
 /**
  *
@@ -24,7 +23,9 @@ public class PantallaPrincipal extends javax.swing.JFrame {
        initComponents();
        this.gestor = gestor;
        this.nombreUsuario = nombreUsuario;
-       txtshowUsuario.setText(nombreUsuario);       
+       txtshowUsuario.setText(nombreUsuario);   
+       this.setLocationRelativeTo(null);
+
     }
     
 

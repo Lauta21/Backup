@@ -24,6 +24,8 @@ public class LoginUsuario extends javax.swing.JFrame {
     public LoginUsuario(GestorOficinaEmpleo gestor) {
         initComponents();
         this.gestor = gestor;
+        this.setLocationRelativeTo(null);
+
     }
 
     /**
@@ -196,16 +198,19 @@ public class LoginUsuario extends javax.swing.JFrame {
     
  if(nombreUsuario.contains(" ")){
      JOptionPane.showMessageDialog(null,"Error no deje ningun campo vacio","Error",JOptionPane.ERROR_MESSAGE);
+     this.setLocationRelativeTo(null);
      return;
     }
 
  if(gestor.Login(nombreUsuario,contraseña)){
     JOptionPane.showMessageDialog(null,"Inicio sesion exitosamente","Informacion",JOptionPane.INFORMATION_MESSAGE);
-    new Poo.Muni.ui.PantallaPrincipal(gestor, nombreUsuario).setVisible(true);
+    this.setLocationRelativeTo(null);
+    new Poo.Muni.ui.PantallaPrincipal(gestor, nombreUsuario).setVisible(true);   
     dispose();
     
  }else{
      JOptionPane.showMessageDialog(null,"La contraseña o el usuario no son correctos","Error",JOptionPane.ERROR_MESSAGE);
+     this.setLocationRelativeTo(null);
      return;
  }
     

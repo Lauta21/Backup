@@ -25,6 +25,8 @@ public class AltaUsuario extends javax.swing.JFrame {
     public AltaUsuario(GestorOficinaEmpleo gestor) {
         initComponents();
         this.gestor = gestor;
+        this.setLocationRelativeTo(null);
+
        
     }
 
@@ -58,6 +60,7 @@ public class AltaUsuario extends javax.swing.JFrame {
         Email = new javax.swing.JLabel();
         txtMail = new javax.swing.JTextField();
         txtnombreUsuario = new javax.swing.JTextField();
+        jButton1 = new javax.swing.JButton();
         Registro = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -126,7 +129,7 @@ public class AltaUsuario extends javax.swing.JFrame {
             Jlabel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(Jlabel5Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(ConfirmarContraseña, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(ConfirmarContraseña, javax.swing.GroupLayout.DEFAULT_SIZE, 250, Short.MAX_VALUE)
                 .addContainerGap())
         );
         Jlabel5Layout.setVerticalGroup(
@@ -232,14 +235,21 @@ public class AltaUsuario extends javax.swing.JFrame {
             .addComponent(Email, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 42, Short.MAX_VALUE)
         );
 
+        jButton1.setFont(new java.awt.Font("Microsoft JhengHei Light", 0, 18)); // NOI18N
+        jButton1.setText("LOGIN");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addGap(127, 127, 127)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(Guarda, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -248,8 +258,8 @@ public class AltaUsuario extends javax.swing.JFrame {
                             .addComponent(Jlabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jPanel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jPanel11, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addGap(33, 33, 33)
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGap(0, 0, 0)
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(txtContraseña)
                             .addComponent(txtConfirmarContraseña)
                             .addComponent(txtApellido)
@@ -258,7 +268,12 @@ public class AltaUsuario extends javax.swing.JFrame {
                                 .addComponent(txtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(0, 0, Short.MAX_VALUE))
                             .addComponent(txtnombreUsuario)))
-                    .addComponent(Cancelar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addComponent(Guarda, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 30, Short.MAX_VALUE)
+                        .addComponent(Cancelar)))
                 .addContainerGap(112, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
@@ -291,10 +306,12 @@ public class AltaUsuario extends javax.swing.JFrame {
                     .addComponent(txtConfirmarContraseña, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(Jlabel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addComponent(Guarda, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(Cancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(22, 22, 22))
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(Cancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(Guarda, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(0, 92, Short.MAX_VALUE))
         );
 
         Registro.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
@@ -312,7 +329,7 @@ public class AltaUsuario extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(308, 308, 308)
                         .addComponent(Registro)))
-                .addContainerGap(44, Short.MAX_VALUE))
+                .addContainerGap(31, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -321,7 +338,7 @@ public class AltaUsuario extends javax.swing.JFrame {
                 .addComponent(Registro)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(61, Short.MAX_VALUE))
+                .addContainerGap(57, Short.MAX_VALUE))
         );
 
         pack();
@@ -346,35 +363,42 @@ public class AltaUsuario extends javax.swing.JFrame {
         
     if(contraseña.isEmpty() || confirmarcontraseña.isEmpty() || nombre.isEmpty() || apellido.isEmpty() || mail.isEmpty() || nombreUsuario.isEmpty()){
         JOptionPane.showMessageDialog(null,"Error no deje ningun campo vacio","Error", JOptionPane.ERROR_MESSAGE);
+        this.setLocationRelativeTo(null);
         return;
     }
     if(contraseña.length()<6){
         JOptionPane.showMessageDialog(null,"Error la contraseña debe de tener mas de 5 caracteres","Error",JOptionPane.ERROR_MESSAGE);
+        this.setLocationRelativeTo(null);
         return;
     }
     
     if(!ValidarEmail(mail)){
         JOptionPane.showMessageDialog(txtMail,"Error el correo no es valido","Error",JOptionPane.ERROR_MESSAGE);
+        this.setLocationRelativeTo(null);
         return;
     }
     
     if(!gestor.isUsuarioExistente(nombreUsuario)){
         JOptionPane.showMessageDialog(null,"Error el usuario ya existe","Error",JOptionPane.ERROR_MESSAGE);
+        this.setLocationRelativeTo(null);
         return;
     }
     if(nombreUsuario.contains(" ")){
         JOptionPane.showMessageDialog(null,"No se puede usar espacio en el Usuario","Error",JOptionPane.ERROR_MESSAGE);
+        this.setLocationRelativeTo(null);
         return;
     }
         
             
     if(String.valueOf(contraseña).equals(String.valueOf(confirmarcontraseña))){
         JOptionPane.showMessageDialog(null,"Se registro correctamente ","Informacion",JOptionPane.INFORMATION_MESSAGE);
+        this.setLocationRelativeTo(null);
         dispose();
         new Poo.Muni.ui.LoginUsuario(gestor).setVisible(true);
 
         }else{
-        JOptionPane.showMessageDialog(null,"Error las contraseñas no coinciden","Error", JOptionPane.ERROR_MESSAGE);    
+        JOptionPane.showMessageDialog(null,"Error las contraseñas no coinciden","Error", JOptionPane.ERROR_MESSAGE);   
+        this.setLocationRelativeTo(null);
     }  
     
     gestor.GuardarUsuario(nombre,apellido,contraseña,nombreUsuario,mail);
@@ -403,6 +427,12 @@ public class AltaUsuario extends javax.swing.JFrame {
     private void txtApellidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtApellidoActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtApellidoActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        new Poo.Muni.ui.LoginUsuario(gestor).setVisible(true);
+        dispose();
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -450,6 +480,7 @@ public class AltaUsuario extends javax.swing.JFrame {
     private javax.swing.JLabel Nombre;
     private javax.swing.JLabel NombreUsuario;
     private javax.swing.JLabel Registro;
+    private javax.swing.JButton jButton1;
     private javax.swing.JPanel jPanel11;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel5;

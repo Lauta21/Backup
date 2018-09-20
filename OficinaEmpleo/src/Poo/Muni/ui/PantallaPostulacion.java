@@ -6,7 +6,6 @@
 package Poo.Muni.ui;
 
 import Poo.Muni.Controler.GestorOficinaEmpleo;
-import java.util.Date;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import javax.swing.ButtonModel;
@@ -26,6 +25,8 @@ private String nombreUsuario;
     public PantallaPostulacion(GestorOficinaEmpleo gestor) {
         initComponents();
         this.gestor = gestor;
+        this.setLocationRelativeTo(null);
+
     }
 
     /**
@@ -397,10 +398,12 @@ private String nombreUsuario;
      
         if(nombre.isEmpty() || apellido.isEmpty() || dni.isEmpty() || edad.isEmpty() || direccion.isEmpty() || distrito.isEmpty() || cuil_cuit.isEmpty() || telprincipal.isEmpty() || diphorarios.isEmpty() || email.isEmpty()){            
             JOptionPane.showMessageDialog(null,"Error no deje ningun campo vacio","Error",JOptionPane.ERROR_MESSAGE);
+            this.setLocationRelativeTo(null);
             return;
         }
         if(!ValidarEmail(email)){
         JOptionPane.showMessageDialog(txtEmail,"Error el correo no es valido","Error",JOptionPane.ERROR_MESSAGE);
+        this.setLocationRelativeTo(null);
         return;
         }
         
