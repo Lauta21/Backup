@@ -9,7 +9,6 @@ import Poo.Muni.Controler.GestorOficinaEmpleo;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import javax.swing.ButtonModel;
-import javax.swing.JComboBox;
 import javax.swing.JOptionPane;
 
 /**
