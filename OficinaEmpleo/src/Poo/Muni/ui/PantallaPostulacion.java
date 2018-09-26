@@ -6,6 +6,8 @@
 package Poo.Muni.ui;
 
 import Poo.Muni.Controler.GestorOficinaEmpleo;
+import Poo.Muni.Dao.PostulanteDao;
+import java.util.ArrayList;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import javax.swing.ButtonModel;
@@ -129,7 +131,11 @@ private String nombreUsuario;
         jLabel12.setForeground(new java.awt.Color(204, 204, 0));
         jLabel12.setText("Disp. de Horarios");
 
-        boxNivelEducativo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Primario Incompleto", "Primario Completo", "Secundario Incompleto", "Secundario Completo" }));
+        boxNivelEducativo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                boxNivelEducativoActionPerformed(evt);
+            }
+        });
 
         txtCuit_Cuil.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
@@ -380,6 +386,10 @@ private String nombreUsuario;
         // TODO add your handling code here:
         agregarPostulante();
     }//GEN-LAST:event_AgergarActionPerformed
+
+    private void boxNivelEducativoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boxNivelEducativoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_boxNivelEducativoActionPerformed
 
     public void agregarPostulante(){
         String nombre = txtNombre.getText();

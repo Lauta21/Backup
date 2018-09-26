@@ -78,3 +78,9 @@ import java.util.List;
     
 ------------------------------------------------------------------------------------------------------
 
+select titulo,palabras,ejemplar,tema from articulos as a inner join revista as r on a.id_Articulo 
+where a.plabras >= 200
+order by r.ejemplar desc; 
+------------------------------------------------------------------------------------------------------
+select id_Orden,apellido, from Orden as o inner join Cliente_dni as c on o.id_Orden
+where c.apellido = "Rodriguez";

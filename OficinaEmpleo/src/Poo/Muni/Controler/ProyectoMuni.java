@@ -26,7 +26,7 @@ public class ProyectoMuni {
         try {
              factory = new AnnotationConfiguration().configure().addAnnotatedClass(Usuario.class).buildSessionFactory();     
               getConnection();
-        } catch (Throwable ex) {
+        } catch (Exception ex) {
              System.err.println("Failed to create sessionFactory object." + ex);
          throw new ExceptionInInitializerError(ex);
         }

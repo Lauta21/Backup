@@ -7,6 +7,8 @@ package Poo.Muni.Dao;
 
 import Poo.Muni.Postulante;
 import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.Statement;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -42,7 +44,21 @@ public class PostulanteDao {
             session.close();
         }
     }
-
+    
+    public ResultSet GetNivelEducacion(){
+      
+       ResultSet rs = null;
+       try{
+           Statement stmt = connection.createStatement();           
+            rs = stmt.executeQuery("SELECT * FROM NivelEducacion");
+            connection.close();
+            return rs;
+       }catch(Exception e){
+           System.err.println("Got an exceptiob");
+           System.err.println(e.getMessage());
+       }
+        return null;
+    }
 
     
 }
