@@ -37,7 +37,7 @@ public class GestorPostulante {
         NivelEducacion nivelEducacion;       
         ArrayList<NivelEducacion> nivelEducacionList = new ArrayList<NivelEducacion>();
         try{
-           ResultSet rs = null;
+           ResultSet rs;
            rs = postulanteDao.GetNivelEducacion();
         while (rs.next()) {            
          String nombre = rs.getString("nombre");

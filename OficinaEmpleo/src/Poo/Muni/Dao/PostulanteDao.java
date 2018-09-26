@@ -47,7 +47,7 @@ public class PostulanteDao {
     
     public ResultSet GetNivelEducacion(){
       
-       ResultSet rs = null;
+       ResultSet rs;
        try{
            Statement stmt = connection.createStatement();           
             rs = stmt.executeQuery("SELECT * FROM NivelEducacion");
