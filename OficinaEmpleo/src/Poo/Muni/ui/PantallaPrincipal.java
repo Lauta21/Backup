@@ -5,6 +5,7 @@
  */
 package Poo.Muni.ui;
 
+import Poo.Muni.Controler.GestorPostulante;
 import Poo.Muni.Controler.GestorOficinaEmpleo;
 
 /**
@@ -12,16 +13,18 @@ import Poo.Muni.Controler.GestorOficinaEmpleo;
  * @author Capacitacion3
  */
 public class PantallaPrincipal extends javax.swing.JFrame {
-    private final GestorOficinaEmpleo gestor;
+    private final GestorPostulante gestorPostulante;
+   
     private String nombreUsuario;
     /**
      * Creates new form NewJFrame
      * @param gestor
      * @param nombreUsuario
      */
-    public PantallaPrincipal(GestorOficinaEmpleo gestor,String nombreUsuario) {
+    public PantallaPrincipal(GestorPostulante gestorPostulante,String nombreUsuario) {
        initComponents();
-       this.gestor = gestor;
+       this.gestorPostulante = gestorPostulante;
+     
        this.nombreUsuario = nombreUsuario;
        txtshowUsuario.setText(nombreUsuario);   
        this.setLocationRelativeTo(null);
@@ -102,7 +105,7 @@ public class PantallaPrincipal extends javax.swing.JFrame {
 
     private void menPostularmeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menPostularmeActionPerformed
         // TODO add your handling code here:
-        new PantallaPostulacion(gestor).setVisible(true);
+        new PantallaPostulacion(gestorPostulante).setVisible(true);
         dispose();
     }//GEN-LAST:event_menPostularmeActionPerformed
 
@@ -113,7 +116,7 @@ public class PantallaPrincipal extends javax.swing.JFrame {
     private void menCerrarSesionMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menCerrarSesionMouseClicked
         // TODO add your handling code here:
         dispose();
-        new Poo.Muni.ui.LoginUsuario(gestor).setVisible(true);
+//        new Poo.Muni.ui.LoginUsuario(gestor).setVisible(true);
     }//GEN-LAST:event_menCerrarSesionMouseClicked
 
 //    /**

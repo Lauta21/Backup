@@ -7,6 +7,7 @@ package Poo.Muni.ui;
 
 import Poo.Muni.Controler.GestorOficinaEmpleo;
 import javax.swing.JOptionPane;
+import Poo.Muni.Controler.GestorPostulante;
 
 
 
@@ -15,15 +16,17 @@ import javax.swing.JOptionPane;
  * @author Capacitacion3
  */
 public class LoginUsuario extends javax.swing.JFrame {
-          GestorOficinaEmpleo gestor;
+     GestorOficinaEmpleo gestorEmpleo;
+     GestorPostulante gestorPostulante;
 
     /**
      * Creates new form LoginUsuario
-     * @param gestor
+     * @param gestorPostulante
      */
-    public LoginUsuario(GestorOficinaEmpleo gestor) {
+    public LoginUsuario(GestorOficinaEmpleo gestorEmpleo,GestorPostulante gestorPostulante) {
         initComponents();
-        this.gestor = gestor;
+        this.gestorEmpleo = gestorEmpleo;
+        this.gestorPostulante = gestorPostulante;
         this.setLocationRelativeTo(null);
 
     }
@@ -202,10 +205,10 @@ public class LoginUsuario extends javax.swing.JFrame {
      return;
     }
 
- if(gestor.Login(nombreUsuario,contraseña)){
+ if(gestorEmpleo.Login(nombreUsuario,contraseña)){
     JOptionPane.showMessageDialog(null,"Inicio sesion exitosamente","Informacion",JOptionPane.INFORMATION_MESSAGE);
     this.setLocationRelativeTo(null);
-    new Poo.Muni.ui.PantallaPrincipal(gestor, nombreUsuario).setVisible(true);   
+    new Poo.Muni.ui.PantallaPrincipal(gestorPostulante, nombreUsuario).setVisible(true);   
     dispose();
     
  }else{
@@ -222,7 +225,7 @@ public class LoginUsuario extends javax.swing.JFrame {
     }//GEN-LAST:event_RegistrarseActionPerformed
 
     public void registrar(){
-       new poo.muni.ui.AltaUsuario(gestor).setVisible(true);
+       new poo.muni.ui.AltaUsuario(gestorEmpleo,gestorPostulante).setVisible(true);
      dispose();  
     }
     

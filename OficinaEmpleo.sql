@@ -65,7 +65,7 @@ Descripcion nvarchar(20000),
 primary key(id_nivel_educacion),
 foreign key(id_usuario) references Usuario(id_usuario));
 
-insert into NivelEducacion(id_nivel_educacion,nombre,descripcion)values(4,"Universitario","Universitario");
+insert into NivelEducacion(id_nivel_educacion,nombre,descripcion)values(6,"Universitario","");
 
 create table Perfil(
 id_perfil int not null auto_increment,
@@ -102,9 +102,10 @@ foreign key(id_postulante) references Postulante(id_postulante),
 foreign key(id_abstracpersona) references AbstractPersona(id_abstracpersona),
 foreign key(id_usuario) references Usuario(id_usuario));
 
-alter table AbstractPersona
+alter table NivelEducacion
 CHANGE Edad Edad nvarchar(50)
 
-select * from AbstractPersona
+select * from NivelEducacion
+
 
  

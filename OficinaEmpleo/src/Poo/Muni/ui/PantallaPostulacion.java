@@ -5,8 +5,8 @@
  */
 package Poo.Muni.ui;
 
-import Poo.Muni.Controler.GestorOficinaEmpleo;
-import Poo.Muni.Dao.PostulanteDao;
+import Poo.Muni.Controler.GestorPostulante;
+import Poo.Muni.NivelEducacion;
 import java.util.ArrayList;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -18,16 +18,17 @@ import javax.swing.ButtonModel;
  * @author Capacitacion3
  */
 public class PantallaPostulacion extends javax.swing.JFrame {
-private final GestorOficinaEmpleo gestor;
+private final GestorPostulante gestorPostulante;
 private String nombreUsuario;
     /**
      * Creates new form PantallaPostulacion
      * @param gestor
      */
-    public PantallaPostulacion(GestorOficinaEmpleo gestor) {
+    public PantallaPostulacion(GestorPostulante gestorPostulante) {
         initComponents();
-        this.gestor = gestor;
+        this.gestorPostulante = gestorPostulante;
         this.setLocationRelativeTo(null);
+        CargarCombo();
 
     }
 
@@ -358,7 +359,7 @@ private String nombreUsuario;
 
     private void CancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CancelarActionPerformed
         // TODO add your handling code here:
-        new Poo.Muni.ui.PantallaPrincipal(gestor, nombreUsuario).setVisible(true);
+        new Poo.Muni.ui.PantallaPrincipal(gestorPostulante, nombreUsuario).setVisible(true);
         dispose();
     }//GEN-LAST:event_CancelarActionPerformed
 
@@ -391,6 +392,15 @@ private String nombreUsuario;
         // TODO add your handling code here:
     }//GEN-LAST:event_boxNivelEducativoActionPerformed
 
+    private void CargarCombo(){
+        ArrayList<NivelEducacion> nivelList = new ArrayList<NivelEducacion>();
+        nivelList = gestorPostulante.GetNivelEducacion();
+        
+        for(NivelEducacion item:nivelList){
+            boxNivelEducativo.addItem(item.getNombre());
+        }
+        
+    }
     public void agregarPostulante(){
         String nombre = txtNombre.getText();
         String apellido = txtApellido.getText();
@@ -417,7 +427,7 @@ private String nombreUsuario;
         return;
         }
         
-        gestor.GuardarPostulante(null, null, null, nombre, apellido, dni, cuil_cuit, edad, direccion, distrito, telprincipal, telalternativo, null, email, edad);
+        gestorPostulante.GuardarPostulante(null, null, null, nombre, apellido, dni, cuil_cuit, edad, direccion, distrito, telprincipal, telalternativo, null, email, edad);
     }
     public boolean ValidarEmail(String email){
         String regex =("^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@"

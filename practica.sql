@@ -20,4 +20,4 @@ select * from Foto
 
 select f.nombreArchivo,f.tamaño,a.nombre from Album as a inner join Foto as f on a.id_Album = f.id_Foto
 where f.tamaño >= 1024
-order by tamaño descpedido
+order by tamaño desc

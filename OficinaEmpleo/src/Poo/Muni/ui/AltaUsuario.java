@@ -6,6 +6,7 @@
 package poo.muni.ui;
 
 import Poo.Muni.Controler.GestorOficinaEmpleo;
+import Poo.Muni.Controler.GestorPostulante;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import javax.swing.JOptionPane;
@@ -17,14 +18,16 @@ import javax.swing.JOptionPane;
  */
 public class AltaUsuario extends javax.swing.JFrame {
 
-    private final  GestorOficinaEmpleo gestor;    
+    private final  GestorOficinaEmpleo gestor;   
+    private final  GestorPostulante gestorPostulante;    
     /**
      * Creates new form AltaUsuario
      * @param gestor
      */
-    public AltaUsuario(GestorOficinaEmpleo gestor) {
+    public AltaUsuario(GestorOficinaEmpleo gestor,GestorPostulante gestorPostulante) {
         initComponents();
         this.gestor = gestor;
+        this.gestorPostulante=gestorPostulante;
         this.setLocationRelativeTo(null);
 
        
@@ -396,7 +399,7 @@ public class AltaUsuario extends javax.swing.JFrame {
         JOptionPane.showMessageDialog(null,"Se registro correctamente ","Informacion",JOptionPane.INFORMATION_MESSAGE);
         this.setLocationRelativeTo(null);
         dispose();
-        new Poo.Muni.ui.LoginUsuario(gestor).setVisible(true);
+        new Poo.Muni.ui.LoginUsuario(gestor,gestorPostulante).setVisible(true);
 
         }else{
         JOptionPane.showMessageDialog(null,"Error las contraseñas no coinciden","Error", JOptionPane.ERROR_MESSAGE);   
@@ -432,7 +435,7 @@ public class AltaUsuario extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        new Poo.Muni.ui.LoginUsuario(gestor).setVisible(true);
+        new Poo.Muni.ui.LoginUsuario(gestor,gestorPostulante).setVisible(true);
         dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
 

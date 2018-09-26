@@ -24,16 +24,19 @@ import org.hibernate.SessionFactory;
 public class GestorOficinaEmpleo {
      
     private final UsuarioDao usuarioDao;
-    private final PostulanteDao postulanteDao;
+ 
+    private final GestorPostulante gestorPostulante;
+    
     public GestorOficinaEmpleo(SessionFactory sessionFactory,Connection connection){
         this.usuarioDao = new UsuarioDao(sessionFactory,connection);
-        this.postulanteDao = new PostulanteDao(sessionFactory, connection);
+      
+        this.gestorPostulante = new GestorPostulante(sessionFactory, connection);
     } 
       
         
     
     public void run(){
-        new LoginUsuario(this).setVisible(true);
+        new LoginUsuario(this,gestorPostulante).setVisible(true);
 
     }
     
@@ -42,10 +45,7 @@ public class GestorOficinaEmpleo {
         usuarioDao.GuardarUsuario(usuario);    
     }
     
-    public void GuardarPostulante(NivelEducacion nivelEducacion,Perfil perfil, Programa programa,String nombre,String apellido,String dni,String cuil_Cuit,String sexo,String direccion,String distrito,String telPrincipal,String telAlternativo,Date fechadeNacimiento,String email,String edad){
-        Postulante postulante = new Postulante(nivelEducacion, perfil, programa, edad, distrito, direccion, nombre, apellido, dni, cuil_Cuit, sexo, direccion, distrito, telPrincipal, telAlternativo, fechadeNacimiento, email, edad);
-        postulanteDao.GuardarPostulante(postulante);
-    }
+  
     
     public boolean isUsuarioExistente(String nombreUsuario){
         return usuarioDao.isUsuarioExitente(nombreUsuario);
