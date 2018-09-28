@@ -84,3 +84,7 @@ order by r.ejemplar desc;
 ------------------------------------------------------------------------------------------------------
 select id_Orden,apellido, from Orden as o inner join Cliente_dni as c on o.id_Orden
 where c.apellido = "Rodriguez";
+------------------------------------------------------------------------------------------------------
+select nombre,apellido,DNI,edad,curso,inscripcion,nota from Almuno as a inner join Inscripcion as i on a.DNI = i.a.DNI inner join Curso as c on i.Curso_idCurso = idCurso
+where i.nota >= 7 
+order by a.apellido asc;

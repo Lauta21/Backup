@@ -5,13 +5,24 @@
  */
 package Poo.Muni;
 
+import java.io.Serializable;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
 
 
 /**
  *
  * @author Capacitacion3
  */
-public class NivelEducacion {
+@Entity
+@Table(name = "NivelEducacion")
+public class NivelEducacion implements Serializable {
+    @Id 
+    @Column(name = "id_nivel_educacion")
+   
     private String nombre;
     private String descripcion;
     private long id;
