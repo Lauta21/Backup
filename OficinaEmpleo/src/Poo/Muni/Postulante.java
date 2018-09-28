@@ -6,14 +6,23 @@
 package Poo.Muni;
 
 import java.util.Date;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.PrimaryKeyJoinColumn;
+import javax.persistence.Table;
 
 /**
  * 
  * @author Capacitacion3
  */
-
+@Entity
+@Table(name = "Postulante")
+@PrimaryKeyJoinColumn(name = "id_personas", refencedColumnName = "id_perosnas")
 public class Postulante extends Persona{
-   
+   @GeneratedValue
+   @Column(name = "id_postulante")
+   private long id;
 
     private String id_postulante;
     private NivelEducacion nivelEducacion;
