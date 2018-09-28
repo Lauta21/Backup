@@ -50,12 +50,12 @@ foreign key(id_tipo_actividad) references TipoActividad(id_tipo_actividad),
 foreign key(id_usuario) references Usuario(id_usuario));
 
 create table Programa(
-id_progama int not null auto_increment,
-id_usuario int not null,
+id_programa int not null,
 Nombre nvarchar(50),
 Descripcion nvarchar(20000),
-primary key(id_progama),
-foreign key(id_usuario) references Usuario(id_usuario));
+primary key(id_programa));
+
+insert into Programa(id_programa,nombre,descripcion)values(4,"SCIE","");
 
 create table NivelEducacion(
 id_nivel_educacion int not null auto_increment,
@@ -78,14 +78,14 @@ foreign key(id_usuario) references Usuario(id_usuario));
 create table Postulante(
 id_postulante int not null auto_increment,
 id_usuario int not null,
-id_progama int not null,
+id_programa int not null,
 id_nivel_educacion int not null,
 id_perfil int not null,
 Movilidad nvarchar(50),
 Disp_Horarios nvarchar(50),
 Doc_Adicionales nvarchar(500),
 primary key(id_postulante),
-foreign key(id_progama) references Programa(id_progama),
+foreign key(id_programa) references Programa(id_programa),
 foreign key(id_nivel_educacion) references NivelEducacion(id_nivel_educacion),
 foreign key(id_perfil) references Perfil(id_perfil),
 foreign key(id_usuario) references Usuario(id_usuario));
@@ -102,8 +102,8 @@ foreign key(id_postulante) references Postulante(id_postulante),
 foreign key(id_abstracpersona) references AbstractPersona(id_abstracpersona),
 foreign key(id_usuario) references Usuario(id_usuario));
 
-alter table NivelEducacion
-CHANGE Edad Edad nvarchar(50)
+postulantealter table Programa
+CHANGE pogama programa int not null
 delete from NivelEducacion 
 
 select * from NivelEducacion

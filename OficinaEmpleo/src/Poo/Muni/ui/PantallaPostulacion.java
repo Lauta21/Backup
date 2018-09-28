@@ -8,6 +8,7 @@ package Poo.Muni.ui;
 import Poo.Muni.Controler.GestorOficinaEmpleo;
 import Poo.Muni.Controler.GestorPostulante;
 import Poo.Muni.NivelEducacion;
+import Poo.Muni.Programa;
 import java.util.ArrayList;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -32,6 +33,7 @@ private String nombreUsuario;
         this.gestorOficinaEmpleo = gestorOficinaEmpleo;
         this.setLocationRelativeTo(null);
         CargarCombo();
+        CargarPrograma();
 
     }
 
@@ -395,6 +397,16 @@ private String nombreUsuario;
         // TODO add your handling code here:
     }//GEN-LAST:event_boxNivelEducativoActionPerformed
 
+    private void CargarPrograma(){
+        ArrayList<Programa> programaList = new ArrayList<Programa>();
+        programaList = gestorPostulante.GetPrograma();
+        boxPrograma.removeAllItems();
+        
+        for(Programa item:programaList){
+            boxPrograma.addItem(item.getNombre());
+        }
+        
+    }
     private void CargarCombo(){
         ArrayList<NivelEducacion> nivelList = new ArrayList<NivelEducacion>();
         nivelList = gestorPostulante.GetNivelEducacion();

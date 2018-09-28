@@ -57,6 +57,19 @@ public class PostulanteDao {
        }
         return rs;
     }
+    
+    public ResultSet GetPrograma(){
+      
+       ResultSet rs = null;
+       try{
+           Statement stmt = connection.createStatement();           
+            rs = stmt.executeQuery("SELECT * FROM Programa");                     
+       }catch(Exception e){
+           System.err.println("Got an exceptiob");
+           System.err.println(e.getMessage());
+       }
+        return rs;
+    }
 
     
 }

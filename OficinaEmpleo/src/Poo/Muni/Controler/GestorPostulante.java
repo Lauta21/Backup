@@ -60,5 +60,32 @@ public class GestorPostulante {
         return nivelEducacionList;
     } 
     
+    public ArrayList<Programa> GetPrograma(){
+        Programa programa;       
+        ArrayList<Programa> programaList = new ArrayList<Programa>();
+        try{
+           ResultSet rs = null;
+           rs = postulanteDao.GetPrograma();
+        while (rs.next()) {            
+         String nombre = rs.getString("nombre");
+         String descripcion = rs.getString("descripcion");
+         
+         programa = new Programa(nombre,descripcion);
+         programa.setNombre(nombre);
+         programa.setDescripcion(descripcion);
+         
+        
+         programaList.add(programa);
+         
+        }
+        return programaList;
+        }catch(Exception e){
+          if(e != null){
+          }      
+        }
+        return programaList;
+    } 
+
+    
 }   
 
