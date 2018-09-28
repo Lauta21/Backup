@@ -5,6 +5,7 @@
  */
 package Poo.Muni.ui;
 
+import Poo.Muni.Controler.GestorOficinaEmpleo;
 import Poo.Muni.Controler.GestorPostulante;
 import Poo.Muni.NivelEducacion;
 import java.util.ArrayList;
@@ -19,14 +20,16 @@ import javax.swing.ButtonModel;
  */
 public class PantallaPostulacion extends javax.swing.JFrame {
 private final GestorPostulante gestorPostulante;
+private final GestorOficinaEmpleo gestorOficinaEmpleo;
 private String nombreUsuario;
     /**
      * Creates new form PantallaPostulacion
-     * @param gestor
+     * @param gestorPostulante
      */
-    public PantallaPostulacion(GestorPostulante gestorPostulante) {
+    public PantallaPostulacion(GestorPostulante gestorPostulante,GestorOficinaEmpleo gestorOficinaEmpleo) {
         initComponents();
         this.gestorPostulante = gestorPostulante;
+        this.gestorOficinaEmpleo = gestorOficinaEmpleo;
         this.setLocationRelativeTo(null);
         CargarCombo();
 
@@ -359,7 +362,7 @@ private String nombreUsuario;
 
     private void CancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CancelarActionPerformed
         // TODO add your handling code here:
-        new Poo.Muni.ui.PantallaPrincipal(gestorPostulante, nombreUsuario).setVisible(true);
+        new Poo.Muni.ui.PantallaPrincipal(gestorPostulante, nombreUsuario, gestorOficinaEmpleo).setVisible(true);
         dispose();
     }//GEN-LAST:event_CancelarActionPerformed
 
@@ -395,6 +398,7 @@ private String nombreUsuario;
     private void CargarCombo(){
         ArrayList<NivelEducacion> nivelList = new ArrayList<NivelEducacion>();
         nivelList = gestorPostulante.GetNivelEducacion();
+        boxNivelEducativo.removeAllItems();
         
         for(NivelEducacion item:nivelList){
             boxNivelEducativo.addItem(item.getNombre());

@@ -13,6 +13,7 @@ import java.util.Date;
  */
 
 public class Postulante extends Persona{
+   
 
     private String id_postulante;
     private NivelEducacion nivelEducacion;
@@ -23,6 +24,7 @@ public class Postulante extends Persona{
     private String docAdicional;
 
     public Postulante() {
+       
     }
     
     public Postulante(NivelEducacion nivelEducacion, Perfil perfil, Programa programa, String movilidad, String dispHoraria, String docAdicional, String nombre, String apellido, String DNI, String cuil_Cuit, String sexo, String direccion, String distrito, String telPrincipal, String telAlternativo, Date fechadeNacimiento, String email, String edad) {
@@ -34,6 +36,8 @@ public class Postulante extends Persona{
         this.dispHoraria = dispHoraria;
         this.docAdicional = docAdicional;
     }
+    
+    
    
     public String getId_postulante() {
         return id_postulante;

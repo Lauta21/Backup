@@ -47,17 +47,15 @@ public class PostulanteDao {
     
     public ResultSet GetNivelEducacion(){
       
-       ResultSet rs;
+       ResultSet rs = null;
        try{
            Statement stmt = connection.createStatement();           
-            rs = stmt.executeQuery("SELECT * FROM NivelEducacion");
-            connection.close();
-            return rs;
+            rs = stmt.executeQuery("SELECT * FROM NivelEducacion");                     
        }catch(Exception e){
            System.err.println("Got an exceptiob");
            System.err.println(e.getMessage());
        }
-        return null;
+        return rs;
     }
 
     

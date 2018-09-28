@@ -18,15 +18,16 @@ import javax.swing.JOptionPane;
  */
 public class AltaUsuario extends javax.swing.JFrame {
 
-    private final  GestorOficinaEmpleo gestor;   
+    private final  GestorOficinaEmpleo gestorOficinaEmpleo;   
     private final  GestorPostulante gestorPostulante;    
     /**
      * Creates new form AltaUsuario
-     * @param gestor
+     * @param gestorOficinaEmpleo
+     * @param gestorPostulante
      */
-    public AltaUsuario(GestorOficinaEmpleo gestor,GestorPostulante gestorPostulante) {
+    public AltaUsuario(GestorOficinaEmpleo gestorOficinaEmpleo,GestorPostulante gestorPostulante) {
         initComponents();
-        this.gestor = gestor;
+        this.gestorOficinaEmpleo = gestorOficinaEmpleo;
         this.gestorPostulante=gestorPostulante;
         this.setLocationRelativeTo(null);
 
@@ -58,7 +59,6 @@ public class AltaUsuario extends javax.swing.JFrame {
         txtContraseña = new javax.swing.JPasswordField();
         txtConfirmarContraseña = new javax.swing.JPasswordField();
         Guarda = new javax.swing.JButton();
-        Cancelar = new javax.swing.JButton();
         jPanel11 = new javax.swing.JPanel();
         Email = new javax.swing.JLabel();
         txtMail = new javax.swing.JTextField();
@@ -210,14 +210,6 @@ public class AltaUsuario extends javax.swing.JFrame {
             }
         });
 
-        Cancelar.setFont(new java.awt.Font("Microsoft JhengHei Light", 0, 18)); // NOI18N
-        Cancelar.setText("CANCELAR");
-        Cancelar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                CancelarActionPerformed(evt);
-            }
-        });
-
         jPanel11.setBackground(new java.awt.Color(77, 77, 77));
         jPanel11.setForeground(new java.awt.Color(252, 225, 0));
 
@@ -275,10 +267,8 @@ public class AltaUsuario extends javax.swing.JFrame {
                             .addComponent(txtnombreUsuario)))
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addComponent(Guarda, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 30, Short.MAX_VALUE)
-                        .addComponent(Cancelar)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(112, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
@@ -311,12 +301,10 @@ public class AltaUsuario extends javax.swing.JFrame {
                     .addComponent(txtConfirmarContraseña, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(Jlabel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(Cancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(Guarda, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(0, 92, Short.MAX_VALUE))
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Guarda, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, 49, Short.MAX_VALUE))
+                .addGap(0, 93, Short.MAX_VALUE))
         );
 
         Registro.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
@@ -343,7 +331,7 @@ public class AltaUsuario extends javax.swing.JFrame {
                 .addComponent(Registro)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(51, Short.MAX_VALUE))
+                .addContainerGap(50, Short.MAX_VALUE))
         );
 
         pack();
@@ -383,7 +371,7 @@ public class AltaUsuario extends javax.swing.JFrame {
         return;
     }
     
-    if(!gestor.isUsuarioExistente(nombreUsuario)){
+    if(!gestorOficinaEmpleo.isUsuarioExistente(nombreUsuario)){
         JOptionPane.showMessageDialog(null,"Error el usuario ya existe","Error",JOptionPane.ERROR_MESSAGE);
         this.setLocationRelativeTo(null);
         return;
@@ -399,14 +387,14 @@ public class AltaUsuario extends javax.swing.JFrame {
         JOptionPane.showMessageDialog(null,"Se registro correctamente ","Informacion",JOptionPane.INFORMATION_MESSAGE);
         this.setLocationRelativeTo(null);
         dispose();
-        new Poo.Muni.ui.LoginUsuario(gestor,gestorPostulante).setVisible(true);
+        new Poo.Muni.ui.LoginUsuario(gestorOficinaEmpleo,gestorPostulante).setVisible(true);
 
         }else{
         JOptionPane.showMessageDialog(null,"Error las contraseñas no coinciden","Error", JOptionPane.ERROR_MESSAGE);   
         this.setLocationRelativeTo(null);
     }  
     
-    gestor.GuardarUsuario(nombre,apellido,contraseña,nombreUsuario,mail);
+    gestorOficinaEmpleo.GuardarUsuario(nombre,apellido,contraseña,nombreUsuario,mail);
     
     }
 
@@ -424,18 +412,13 @@ public class AltaUsuario extends javax.swing.JFrame {
          
         return matcher.matches();  
     }
-    private void CancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CancelarActionPerformed
-    dispose();
-        // TODO add your handling code here:
-    }//GEN-LAST:event_CancelarActionPerformed
-
     private void txtApellidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtApellidoActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtApellidoActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        new Poo.Muni.ui.LoginUsuario(gestor,gestorPostulante).setVisible(true);
+        new Poo.Muni.ui.LoginUsuario(gestorOficinaEmpleo,gestorPostulante).setVisible(true);
         dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
 
@@ -476,7 +459,6 @@ public class AltaUsuario extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Apellido;
-    private javax.swing.JButton Cancelar;
     private javax.swing.JLabel ConfirmarContraseña;
     private javax.swing.JLabel Contraseña;
     private javax.swing.JLabel Email;

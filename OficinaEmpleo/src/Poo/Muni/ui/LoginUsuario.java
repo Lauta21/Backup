@@ -16,7 +16,7 @@ import Poo.Muni.Controler.GestorPostulante;
  * @author Capacitacion3
  */
 public class LoginUsuario extends javax.swing.JFrame {
-     GestorOficinaEmpleo gestorEmpleo;
+     GestorOficinaEmpleo gestorOficinaEmpleo;
      GestorPostulante gestorPostulante;
 
     /**
@@ -25,7 +25,7 @@ public class LoginUsuario extends javax.swing.JFrame {
      */
     public LoginUsuario(GestorOficinaEmpleo gestorEmpleo,GestorPostulante gestorPostulante) {
         initComponents();
-        this.gestorEmpleo = gestorEmpleo;
+        this.gestorOficinaEmpleo = gestorEmpleo;
         this.gestorPostulante = gestorPostulante;
         this.setLocationRelativeTo(null);
 
@@ -205,10 +205,10 @@ public class LoginUsuario extends javax.swing.JFrame {
      return;
     }
 
- if(gestorEmpleo.Login(nombreUsuario,contraseña)){
+ if(gestorOficinaEmpleo.Login(nombreUsuario,contraseña)){
     JOptionPane.showMessageDialog(null,"Inicio sesion exitosamente","Informacion",JOptionPane.INFORMATION_MESSAGE);
     this.setLocationRelativeTo(null);
-    new Poo.Muni.ui.PantallaPrincipal(gestorPostulante, nombreUsuario).setVisible(true);   
+    new Poo.Muni.ui.PantallaPrincipal(gestorPostulante, nombreUsuario, gestorOficinaEmpleo).setVisible(true);
     dispose();
     
  }else{
@@ -225,7 +225,7 @@ public class LoginUsuario extends javax.swing.JFrame {
     }//GEN-LAST:event_RegistrarseActionPerformed
 
     public void registrar(){
-       new poo.muni.ui.AltaUsuario(gestorEmpleo,gestorPostulante).setVisible(true);
+       new poo.muni.ui.AltaUsuario(gestorOficinaEmpleo,gestorPostulante).setVisible(true);
      dispose();  
     }
     

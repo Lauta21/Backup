@@ -12,7 +12,6 @@ import Poo.Muni.Postulante;
 import Poo.Muni.Programa;
 import java.sql.Connection;
 import java.sql.ResultSet;
-import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Date;
 import org.hibernate.SessionFactory;
@@ -37,25 +36,29 @@ public class GestorPostulante {
         NivelEducacion nivelEducacion;       
         ArrayList<NivelEducacion> nivelEducacionList = new ArrayList<NivelEducacion>();
         try{
-           ResultSet rs;
+           ResultSet rs = null;
            rs = postulanteDao.GetNivelEducacion();
         while (rs.next()) {            
          String nombre = rs.getString("nombre");
          String descripcion = rs.getString("descripcion");
          String id = rs.getString("id_nivel_educacion");
          long idInt = Long.parseLong(id);
+         
          nivelEducacion = new NivelEducacion(nombre, descripcion, idInt);
          nivelEducacion.setNombre(nombre);
          nivelEducacion.setDescripcion(descripcion);
+         
          nivelEducacion.setId(idInt);
          nivelEducacionList.add(nivelEducacion);
-         return nivelEducacionList;
+         
         }
+        return nivelEducacionList;
         }catch(Exception e){
           if(e != null){
           }      
         }
         return nivelEducacionList;
-    }       
+    } 
+    
 }   
 

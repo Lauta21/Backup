@@ -5,8 +5,8 @@
  */
 package Poo.Muni.ui;
 
-import Poo.Muni.Controler.GestorPostulante;
 import Poo.Muni.Controler.GestorOficinaEmpleo;
+import Poo.Muni.Controler.GestorPostulante;
 
 /**
  *
@@ -14,22 +14,26 @@ import Poo.Muni.Controler.GestorOficinaEmpleo;
  */
 public class PantallaPrincipal extends javax.swing.JFrame {
     private final GestorPostulante gestorPostulante;
+    private final GestorOficinaEmpleo gestorOficinaEmpleo;
    
     private String nombreUsuario;
     /**
      * Creates new form NewJFrame
-     * @param gestor
+     * @param gestorPostulante
      * @param nombreUsuario
+     * @param gestorOficinaEmpleo
      */
-    public PantallaPrincipal(GestorPostulante gestorPostulante,String nombreUsuario) {
+    public PantallaPrincipal(GestorPostulante gestorPostulante,String nombreUsuario,GestorOficinaEmpleo gestorOficinaEmpleo) {
        initComponents();
        this.gestorPostulante = gestorPostulante;
-     
+       this.gestorOficinaEmpleo = gestorOficinaEmpleo;     
        this.nombreUsuario = nombreUsuario;
        txtshowUsuario.setText(nombreUsuario);   
        this.setLocationRelativeTo(null);
 
-    }
+    } 
+    
+    
     
 
 
@@ -105,7 +109,7 @@ public class PantallaPrincipal extends javax.swing.JFrame {
 
     private void menPostularmeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menPostularmeActionPerformed
         // TODO add your handling code here:
-        new PantallaPostulacion(gestorPostulante).setVisible(true);
+        new PantallaPostulacion(gestorPostulante,gestorOficinaEmpleo).setVisible(true);
         dispose();
     }//GEN-LAST:event_menPostularmeActionPerformed
 
@@ -115,6 +119,7 @@ public class PantallaPrincipal extends javax.swing.JFrame {
 
     private void menCerrarSesionMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menCerrarSesionMouseClicked
         // TODO add your handling code here:
+        new LoginUsuario(gestorOficinaEmpleo, gestorPostulante).setVisible(true);
         dispose();
 //        new Poo.Muni.ui.LoginUsuario(gestor).setVisible(true);
     }//GEN-LAST:event_menCerrarSesionMouseClicked

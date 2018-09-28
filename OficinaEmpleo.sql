@@ -65,7 +65,7 @@ Descripcion nvarchar(20000),
 primary key(id_nivel_educacion),
 foreign key(id_usuario) references Usuario(id_usuario));
 
-insert into NivelEducacion(id_nivel_educacion,nombre,descripcion)values(6,"Universitario","");
+insert into NivelEducacion(id_nivel_educacion,nombre,descripcion)values(4,"Universitario","");
 
 create table Perfil(
 id_perfil int not null auto_increment,
@@ -104,6 +104,7 @@ foreign key(id_usuario) references Usuario(id_usuario));
 
 alter table NivelEducacion
 CHANGE Edad Edad nvarchar(50)
+delete from NivelEducacion 
 
 select * from NivelEducacion
 
