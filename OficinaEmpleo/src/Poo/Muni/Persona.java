@@ -22,7 +22,7 @@ public abstract class Persona {
     @Id
     @GeneratedValue
     @Column(name = "id_persona")
-    private String id_persona;
+     private String id_persona;
     @Column(name = "Nombre")
      private String nombre;
     @Column(name = "Apellido")
@@ -42,7 +42,7 @@ public abstract class Persona {
     @Column(name = "TelAlternativo")
      private String telAlternativo;
     @Column(name = "FechaNacimiento")
-      Date fechadeNacimiento;
+     private Date fechadeNacimiento;
     @Column(name = "Email")
      private String email;
     @Column(name = "Edad")

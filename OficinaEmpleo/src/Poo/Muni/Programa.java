@@ -20,9 +20,10 @@ import javax.persistence.Table;
 public class Programa implements Serializable {
     @Id
     @Column(name = "id_programa")
+    private long id;
     private String nombre;
     private String descripcion;
-    private long id;
+    
 
     public Programa() {
     }

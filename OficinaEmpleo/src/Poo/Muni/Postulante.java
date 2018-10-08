@@ -8,9 +8,12 @@ package Poo.Muni;
 import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.PrimaryKeyJoinColumn;
 import javax.persistence.Table;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
 
 /**
  * 
@@ -18,18 +21,25 @@ import javax.persistence.Table;
  */
 @Entity
 @Table(name = "Postulante")
-@PrimaryKeyJoinColumn(name = "id_personas", refencedColumnName = "id_perosnas")
+@PrimaryKeyJoinColumn(name = "id_persona", referencedColumnName = "id_perosna")
 public class Postulante extends Persona{
-   @GeneratedValue
-   @Column(name = "id_postulante")
-   private long id;
-
-    private String id_postulante;
+    @GeneratedValue
+    @Column(name = "id_postulante")
+    private long id;
+    @OneToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "id_nivel_educacion")
     private NivelEducacion nivelEducacion;
+    @OneToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "id_perfil")
     private Perfil perfil;
+    @OneToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "id_programa")
     private Programa programa;
+    @Column(name = "movilidad")
     private String movilidad;
+    @Column(name = "dispHoraria")
     private String dispHoraria;
+    @Column(name = "docAdicional")
     private String docAdicional;
 
     public Postulante() {
@@ -48,11 +58,11 @@ public class Postulante extends Persona{
     
     
    
-    public String getId_postulante() {
-        return id_postulante;
+    public long getId_postulante() {
+        return id;
     }
-    public void setId_postulante(String id_postulante) {
-        this.id_postulante = id_postulante;
+    public void setId_postulante(long id) {
+        this.id = id;
     }   
     public NivelEducacion getNivelEducacion() {
         return nivelEducacion;

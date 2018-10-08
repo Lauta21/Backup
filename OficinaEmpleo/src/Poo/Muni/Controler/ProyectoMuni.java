@@ -4,6 +4,11 @@
  * and open the template in the editor.
  */
 package Poo.Muni.Controler;
+import Poo.Muni.NivelEducacion;
+import Poo.Muni.Perfil;
+import Poo.Muni.Persona;
+import Poo.Muni.Postulante;
+import Poo.Muni.Programa;
 import Poo.Muni.Usuario;
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -24,7 +29,14 @@ public class ProyectoMuni {
      */
     public static void main(String[] args) {
         try {
-             factory = new AnnotationConfiguration().configure().addAnnotatedClass(Usuario.class).buildSessionFactory();     
+             factory = new AnnotationConfiguration().configure().
+                     addAnnotatedClass(Usuario.class).
+                     addAnnotatedClass(Postulante.class).
+                     addAnnotatedClass(Persona.class).
+                     addAnnotatedClass(NivelEducacion.class).
+                     addAnnotatedClass(Perfil.class).
+                     addAnnotatedClass(Programa.class)
+                     .buildSessionFactory();     
               getConnection();
         } catch (Exception ex) {
              System.err.println("Failed to create sessionFactory object." + ex);

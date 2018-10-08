@@ -34,6 +34,13 @@ public class NivelEducacion implements Serializable {
         this.descripcion = descripcion;
         this.id = id;
     }
+     public enum nivelEducacionEnum{
+      primario,
+      secundario,
+      terciario,
+      universitario
+       
+    }
     public String getNombre() {
         return nombre;
     }
@@ -51,6 +58,5 @@ public class NivelEducacion implements Serializable {
     }
     public void setId(long id) {
         this.id = id;
-    }
-    
+    }  
 }

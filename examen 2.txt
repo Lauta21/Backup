@@ -1,0 +1,90 @@
+public class Curso{
+
+ private List<Inscripcion> inscripcion;
+ private int curso;
+ private float notaAprobacion;
+ private String nombreCurso;
+
+public Curso(float nota,int cupo){
+ this.inscripcion = new ArrayList<Inscripcion>();
+ this.nota = nota;
+ this.cupo = cupo;
+}
+ public int getNombreCurso(){
+ return nombreCurso;
+}
+ public void setNombreCurso(String nombreCurso){
+ this.nombreCurso = nombreCurso;
+}
+
+public void cantidadEstudiantes(String nombre){
+int cantidad;
+for(Curso cur: curso)
+
+if(nombre.equals curs.getNombreCurso){
+ cantidad = cru.inscripciones.siza();
+
+}
+
+}
+}
+-----------------------------------------------------------------
+public class Alumno{
+
+ private int dni;
+ private String nombre;
+ private String apellido;
+ private int edad;
+}
+
+public Alumno(int dni,String nombre,String apellido,int edad){
+
+ this.dni = dni;
+ this.nombre = nomre;
+ this.apellido = apellido;
+ this.edad = edad;
+ this.equals(a);
+}
+
+public boolean equals(Alumno a){
+
+}
+
+}
+-----------------------------------------------------------------
+public class Inscripcion(){
+
+ private Curso curso;
+ private Alumno alumno;
+ private float nota;
+
+public Inscripcion(){
+}
+
+public float getNota(){
+return nota;
+}
+
+public void setNota(float nota){
+this.nota = nota;
+}
+
+public void setAlumno(Alumno a){
+this.alumno = a;
+}
+
+public void setCurso(Curso c){
+this.curso = c;
+}
+
+}
+-----------------------------------------------------------------
+public class Colegio(){
+
+ private List<Curso> cursos;
+ public Colegio(){
+   this.curso = new ArrayList<Curso>();
+}
+
+}
+
